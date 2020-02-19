@@ -40,6 +40,14 @@ class MainActivity : AppCompatActivity() {
                             )
                         }
                         Divider(color = Color.Green, height = 3.dp)
+
+                        Container(expanded = true, alignment = Alignment.Center){
+                            Button(
+                                text = "Nested Scroll View (RecyclerView)",
+                                onClick = { startActivity(Intent(application, NestedScrollActivity::class.java)) }
+                            )
+                        }
+                        Divider(color = Color.Green, height = 3.dp)
                     }
                 }
            }
