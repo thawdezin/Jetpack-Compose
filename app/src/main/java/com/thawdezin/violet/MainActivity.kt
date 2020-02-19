@@ -25,14 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            //MainContainer()
-            var intent: Intent = Intent(application, TestActivity::class.java)
-
-
-            Button(
-                text = "Click Me",
-            onClick = { startActivity(intent)}
-            )
+Text("Hello")
         }
 
 
