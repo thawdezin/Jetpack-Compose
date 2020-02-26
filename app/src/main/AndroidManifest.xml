@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NestedScrollActivity"></activity>
+        <activity android:name=".ImageActivity"></activity>
+        <activity android:name=".BottomNavigation" />
+        <activity android:name=".NestedScrollActivity" />
         <activity android:name=".StackLayoutActivity" />
         <activity
             android:name=".MainActivity"
