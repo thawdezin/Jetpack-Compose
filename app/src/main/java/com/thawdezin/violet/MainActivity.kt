@@ -79,6 +79,14 @@ class MainActivity : AppCompatActivity() {
                             )
                         }
                         Divider(color = Color.Green, height = 3.dp)
+
+                        Container(expanded = true, alignment = Alignment.Center){
+                            Button(
+                                text = "Image",
+                                onClick = { startActivity(Intent(application, ImageActivity::class.java)) }
+                            )
+                        }
+                        Divider(color = Color.Green, height = 3.dp)
                     }
                 }
            //}
