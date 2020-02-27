@@ -2,6 +2,7 @@ package com.thawdezin.violet
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.compose.Model
@@ -82,8 +83,8 @@ class MainActivity : AppCompatActivity() {
 
                         Container(expanded = true, alignment = Alignment.Center){
                             Button(
-                                text = "Image",
-                                onClick = { startActivity(Intent(application, ImageActivity::class.java)) }
+                                text = "DateTimePicker",
+                                onClick = { startActivity(Intent(application, DateTimeActivity::class.java)) }
                             )
                         }
                         Divider(color = Color.Green, height = 3.dp)
@@ -93,6 +94,9 @@ class MainActivity : AppCompatActivity() {
         //}
     }
 }//MainActivity
+
+
+
 
 
 @Model
