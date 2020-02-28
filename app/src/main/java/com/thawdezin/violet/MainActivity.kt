@@ -8,7 +8,6 @@ import androidx.ui.core.Alignment
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
-import androidx.ui.graphics.Image
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container
 import androidx.ui.material.Button
@@ -33,22 +32,26 @@ class MainActivity : AppCompatActivity() {
             Scaffold {
                 VerticalScroller {
                     Column  {
-                        showButton("Stack Layout", StackLayoutActivity::class.javaObjectType as Class<Any>?)
-                        showButton("Nested Scroll Activity", NestedScrollActivity::class.javaObjectType as Class<Any>?)
-                        showButton("Navigation", BottomNavigation::class.javaObjectType as Class<Any>?)
-                        showButton("Image", ImageActivity::class.javaObjectType as Class<Any>?)
-                        showButton("Date Time Picker", DateTimeActivity::class.javaObjectType as Class<Any>)
-                        showButton("Image via btn", DateTimeActivity::class.javaObjectType as Class<Any>?)
+                        showButton(StackLayoutActivity::class.javaObjectType as Class<Any>)
+                        showButton(NestedScrollActivity::class.javaObjectType as Class<Any>)
+                        showButton(BottomNavigation::class.javaObjectType as Class<Any>)
+                        showButton(ImageActivity::class.javaObjectType as Class<Any>)
+                        showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
+                        showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
                     }
                 }
            }
         }
     }
 
-    private fun showButton(text:String = "Button", goTo: Class<Any>?) {
+    private fun showButton(goTo: Class<Any>?) {
+
+        val readableClassName = goTo!!.simpleName.split(("(?=\\p{Upper})").toRegex()).dropLastWhile { it.isEmpty() }
+            .toTypedArray().joinToString(prefix = "", postfix = "", separator = " ")
+
         Container(expanded = true, alignment = Alignment.Center) {
             Button(
-                text = text,
+                text = readableClassName,
                 onClick = { startActivity(Intent(applicationContext, goTo)) }
             )
         }
