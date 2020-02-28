@@ -2,11 +2,9 @@ package com.thawdezin.violet
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.app.TimePickerDialog.OnTimeSetListener
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.layout.Column
@@ -16,8 +14,6 @@ import java.util.*
 
 
 class DateTimeActivity : AppCompatActivity() {
-
-    var timeP : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,42 +25,42 @@ class DateTimeActivity : AppCompatActivity() {
         val mHour = c[Calendar.HOUR_OF_DAY]
         val mMinute = c[Calendar.MINUTE]
 
-        val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener
-
-        { datePicker: DatePicker, day: Int, month: Int, year: Int ->
-            setContent {
-                Column {
-                    Text("$day, $month, $year, ")
+        val datePickerDialog = DatePickerDialog(
+            this, DatePickerDialog.OnDateSetListener
+            { datePicker: DatePicker, day: Int, month: Int, year: Int ->
+                setContent {
+                    Column {
+                        Text("$day, $month, $year")
+                    }
                 }
-            }
-        }, year, month, day
+            }, year, month, day
         )
 
-        //datePickerDialog.show()
 
         val timePickerDialog = TimePickerDialog(
             this,
-            OnTimeSetListener { view, hourOfDay, minute ->
-               timeP = hourOfDay
-//                setContent {
-//                    Column {
-//                        Text("$hourOfDay:$minute")
-//                    }
-//                }
-            }, mHour, mMinute, false)
-        //timePickerDialog.show()
+            TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                setContent {
+                    Column {
+                        Text("$hourOfDay:$minute")
+                    }
+                }
+            }, mHour, mMinute, false
+        )
 
-        setContent{
-            Column{
+
+        setContent {
+            Column {
                 Button(text = "Date",
                     style = OutlinedButtonStyle(),
-                    onClick = { datePickerDialog.show()
+                    onClick = {
+                        datePickerDialog.show()
                     })
                 Button(text = "Time",
                     style = OutlinedButtonStyle(),
-                    onClick = { timePickerDialog.show()
+                    onClick = {
+                        timePickerDialog.show()
                     })
-                Text("$timeP")
             }
         }
     }
