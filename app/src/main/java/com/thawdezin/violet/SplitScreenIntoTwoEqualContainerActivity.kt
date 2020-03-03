@@ -17,7 +17,7 @@ import androidx.ui.unit.dp
 import androidx.ui.unit.sp
 import kotlin.coroutines.Continuation
 
-class CenterElementInColumnActivity : AppCompatActivity() {
+class SplitScreenIntoTwoEqualContainerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

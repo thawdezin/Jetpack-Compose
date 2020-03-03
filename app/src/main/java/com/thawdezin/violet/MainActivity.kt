@@ -17,6 +17,7 @@ import androidx.ui.material.Scaffold
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 
+@Suppress("UNCHECKED_CAST")
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                         showButton(ImageActivity::class.javaObjectType as Class<Any>)
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
-                        showButton(CenterElementInColumnActivity::class.javaObjectType as Class<Any>)
+                        showButton(SplitScreenIntoTwoEqualContainerActivity::class.javaObjectType as Class<Any>)
                     }
                 }
            }

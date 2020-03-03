@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SplitScreenIntoTwoEqualContainerActivity"/>
         <activity android:name=".FragmentContainerActivity" />
         <activity android:name=".DateTimeActivity" />
         <activity android:name=".ImageActivity" />
@@ -17,7 +17,7 @@
         <activity android:name=".NestedScrollActivity" />
         <activity android:name=".StackLayoutActivity" />
         <activity
-            android:name=".CenterElementInColumnActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
