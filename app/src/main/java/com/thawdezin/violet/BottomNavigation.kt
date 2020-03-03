@@ -9,6 +9,7 @@ import androidx.ui.core.Alignment
 import androidx.ui.core.ContextAmbient
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
+import androidx.ui.foundation.DrawImage
 import androidx.ui.graphics.Color
 import androidx.ui.graphics.Image
 import androidx.ui.graphics.ImageConfig
@@ -76,7 +77,11 @@ fun AppBars() {
                 actionData = listOf(
                     Image(12, 13, ImageConfig.Argb8888, true, ColorSpaces.Ntsc1953),
                     Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg),
+                    Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC),
                     Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
+
+
+
                 )
             ) { actionImage ->
                 AppBarIcon(actionImage) {

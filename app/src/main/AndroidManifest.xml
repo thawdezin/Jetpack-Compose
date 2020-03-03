@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DateTimeActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".FragmentContainerActivity" />
+        <activity android:name=".DateTimeActivity" />
         <activity android:name=".ImageActivity" />
         <activity android:name=".BottomNavigation" />
         <activity android:name=".NestedScrollActivity" />
         <activity android:name=".StackLayoutActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CenterElementInColumnActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

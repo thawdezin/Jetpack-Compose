@@ -1,4 +1,4 @@
-//package com.thawdezin.violet.fragments
+package com.thawdezin.violet.fragments
 //
 //import android.os.Bundle
 //import android.view.LayoutInflater
@@ -51,7 +51,6 @@
 //class LoaderFragment : Fragment() {
 //
 //    private val viewModel: LoaderViewModel by
-//    viewModel
 //
 //    @Model
 //    class ActivityLoadingState(var loading: Boolean = false)
