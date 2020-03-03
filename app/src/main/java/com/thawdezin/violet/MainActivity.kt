@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                         showButton(ImageActivity::class.javaObjectType as Class<Any>)
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
-                        showButton(SplitScreenIntoTwoEqualContainerActivity::class.javaObjectType as Class<Any>)
+                        showButton(TwoEqualContainerActivity::class.javaObjectType as Class<Any>)
                     }
                 }
            }
