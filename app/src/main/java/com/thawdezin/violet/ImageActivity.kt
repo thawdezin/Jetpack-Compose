@@ -8,7 +8,9 @@ import androidx.ui.foundation.SimpleImage
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Column
+import androidx.ui.layout.Container
 import androidx.ui.res.imageResource
+import androidx.ui.unit.dp
 
 class ImageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,12 +18,11 @@ class ImageActivity : AppCompatActivity() {
         setContent{
             val img = imageResource(id = R.drawable.qr)
             Column{
-                VerticalScroller() {
+                Container(width= 50.dp, height = 50.dp){
                     DrawImage(image = img)
-                    DrawImage(image = imageResource(id = R.drawable.folder))
-                    DrawImage(image = imageResource(id = R.drawable.house))
-                    DrawImage(image = imageResource(id = R.drawable.qr))
                 }
+
+
 
                 //SimpleImage(imageResource(id = R.drawable.qr), tint = Color.Green)
             }

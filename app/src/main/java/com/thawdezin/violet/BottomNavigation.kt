@@ -28,11 +28,8 @@ class BottomNavigation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
                 AppBars()
-
         }
     }
-
-
 }
 
 
@@ -75,10 +72,12 @@ fun AppBars() {
 //                        onClick = { Toast.makeText(context, "Fab", Toast.LENGTH_LONG).show() })
 //                },
                 actionData = listOf(
-                    Image(12, 13, ImageConfig.Argb8888, true, ColorSpaces.Ntsc1953),
+                   // Image(12, 13, ImageConfig.Argb8888, true, ColorSpaces.Ntsc1953),
                     Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg),
-                    Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC),
-                    Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
+                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg),
+                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg)
+                    ///Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
+                    //Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
 
 
 

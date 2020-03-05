@@ -8,12 +8,10 @@ import androidx.ui.core.Alignment
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
+import androidx.ui.graphics.Image
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container
-import androidx.ui.material.Button
-import androidx.ui.material.Divider
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.Scaffold
+import androidx.ui.material.*
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 
@@ -40,6 +38,8 @@ class MainActivity : AppCompatActivity() {
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
                         showButton(TwoEqualContainerActivity::class.javaObjectType as Class<Any>)
+                        showButton(BottomNavigationActivity::class.javaObjectType as Class<Any>)
+                        showButton(TextChangedOnButtonClickActivity::class.javaObjectType as Class<Any>)
                     }
                 }
            }
@@ -63,5 +63,20 @@ class MainActivity : AppCompatActivity() {
 
 
 
+@Composable
+fun BottomAppBarNoFab(getMyActionImage: () -> Image, getMyNavigationImage: () -> Image) {
+    val someActionImage: Image = getMyActionImage()
+    val someNavigationImage: Image = getMyNavigationImage()
+    val navigationIcon: @Composable() () -> Unit = {
+        AppBarIcon(someNavigationImage) { /* doSomething()*/ }
+    }
+    val actionData = listOf(someActionImage)
+    BottomAppBar(
+        navigationIcon = navigationIcon,
+        actionData = actionData
+    ) { actionImage ->
+        AppBarIcon(actionImage) { /* doSomething()*/ }
+    }
+}
 
 
