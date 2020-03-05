@@ -39,7 +39,6 @@ class ScrollerOnDataChange : AppCompatActivity() {
         }
     }
 
-
     @Composable
     fun LayoutPlaygroundFirstView(state: ModelClass) {
         Column {
@@ -66,7 +65,6 @@ class ScrollerOnDataChange : AppCompatActivity() {
         }
     }
 
-
     @Composable
     fun nestedScrollContent(state: ModelClass) {
         val st = state
@@ -81,7 +79,6 @@ class ScrollerOnDataChange : AppCompatActivity() {
                     Container(height = 100.dp, expanded = true){
                         Text("$i")
                     }
-
                 }
             }
         }

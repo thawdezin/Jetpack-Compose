@@ -7,8 +7,10 @@ import androidx.compose.Composable
 import androidx.ui.core.Alignment
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
+import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
 import androidx.ui.graphics.Image
+import androidx.ui.graphics.Shape
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container
 import androidx.ui.material.*
@@ -56,10 +58,12 @@ class MainActivity : AppCompatActivity() {
         Container(expanded = true, alignment = Alignment.Center) {
             Button(
                 text = readableClassName,
+                style = ContainedButtonStyle(backgroundColor = Color.Green,
+                contentColor = Color.Black, elevation = 12.dp),
                 onClick = { startActivity(Intent(applicationContext, goTo)) }
             )
         }
-        Divider(color = Color.Green, height = 3.dp)
+        Divider(color = Color.Transparent, height = 3.dp)
     }
 }//MainActivity
 
