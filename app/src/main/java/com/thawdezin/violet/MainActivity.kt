@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             Scaffold {
                 VerticalScroller {
                     Column  {
+                        showButton(LayoutPlayground::class.javaObjectType as Class<Any>)
                         showButton(StackLayoutActivity::class.javaObjectType as Class<Any>)
                         showButton(NestedScrollActivity::class.javaObjectType as Class<Any>)
                         showButton(BottomNavigation::class.javaObjectType as Class<Any>)
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                         showButton(TwoEqualContainerActivity::class.javaObjectType as Class<Any>)
                         showButton(BottomNavigationActivity::class.javaObjectType as Class<Any>)
                         showButton(TextChangedOnButtonClickActivity::class.javaObjectType as Class<Any>)
+                        showButton(MultiViewWithoutFragment::class.javaObjectType as Class<Any>)
                     }
                 }
            }

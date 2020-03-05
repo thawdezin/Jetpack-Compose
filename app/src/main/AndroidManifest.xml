@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LayoutPlayground"></activity>
+        <activity android:name=".MultiViewWithoutFragment" />
         <activity android:name=".SplashScreenActivity" />
         <activity android:name=".BottomNavigationActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".TextChangedOnButtonClickActivity" />
         <activity android:name=".TwoEqualContainerActivity" />
         <activity android:name=".FragmentContainerActivity" />
         <activity android:name=".DateTimeActivity" />
@@ -20,7 +22,7 @@
         <activity android:name=".NestedScrollActivity" />
         <activity android:name=".StackLayoutActivity" />
         <activity
-            android:name=".TextChangedOnButtonClickActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
