@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LayoutPlayground"></activity>
+        <activity android:name=".ScrollerOnDataChange"></activity>
         <activity android:name=".MultiViewWithoutFragment" />
         <activity android:name=".SplashScreenActivity" />
         <activity android:name=".BottomNavigationActivity" />

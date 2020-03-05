@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             Scaffold {
                 VerticalScroller {
                     Column  {
-                        showButton(LayoutPlayground::class.javaObjectType as Class<Any>)
+                        showButton(ScrollerOnDataChange::class.javaObjectType as Class<Any>)
                         showButton(StackLayoutActivity::class.javaObjectType as Class<Any>)
                         showButton(NestedScrollActivity::class.javaObjectType as Class<Any>)
                         showButton(BottomNavigation::class.javaObjectType as Class<Any>)
