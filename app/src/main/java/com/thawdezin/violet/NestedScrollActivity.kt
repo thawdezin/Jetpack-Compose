@@ -30,8 +30,6 @@ class NestedScrollActivity : AppCompatActivity() {
             nestedScrollContent()
         }
     }
-
-
 }
 
 @Preview
@@ -86,26 +84,28 @@ fun oneToVertical(){
 
 @Composable
 fun aToZhorizontal(){
-    
-        HorizontalScroller {
-            Row {
-                for (i in 'a'..'z'){
-                    if(i == 'd'){
-                        Center{
-                            Container(background(Color.Yellow), width = 150.dp, height = 150.dp, alignment = Alignment.Center){
-                                aToZvertical()
-                            }
+    VerticalScroller {
+        Column {
+            for (i in 'a'..'z'){
+
+                if(i == 'k'){
+                    Center{
+                        Container(background(Color.Green), width = 100.dp, height = 100.dp, alignment = Alignment.Center){
+                            oneToHorizontal()
                         }
-                        
                     }
-                        else{
-                        Container(background(Color.Magenta), width = 150.dp, height = 150.dp, alignment = Alignment.Center){
-                            Text("$i")
-                        }
 
                 }
-                Divider(color = Color.Red)
+                else{
+                    Center{
+                        Container(background(Color.Transparent),height = 100.dp, alignment = Alignment.Center){
+                            Text("$i")
+                        }
+                    }
+                }
+
             }
+            Divider(color = Color.Red)
         }
     }
 }
@@ -113,28 +113,28 @@ fun aToZhorizontal(){
 
 @Composable
 fun aToZvertical(){
-        VerticalScroller {
-            Column {
-                for (i in 'a'..'z'){
-                    
-                    if(i == 'k'){
-                        Center{
-                            Container(background(Color.Green), width = 100.dp, height = 100.dp, alignment = Alignment.Center){
-                                oneToHorizontal()
-                            }
-                        }
-                        
-                    }
-                    else{
-                        Center{
-                            Container(background(Color.Transparent),height = 100.dp, alignment = Alignment.Center){
-                                Text("$i")
-                            }
+    VerticalScroller {
+        Column {
+            for (i in 'a'..'z'){
+
+                if(i == 'k'){
+                    Center{
+                        Container(background(Color.Green), width = 100.dp, height = 100.dp, alignment = Alignment.Center){
+                            oneToHorizontal()
                         }
                     }
-                    
+
                 }
-                Divider(color = Color.Red)
+                else{
+                    Center{
+                        Container(background(Color.Transparent),height = 100.dp, alignment = Alignment.Center){
+                            Text("$i")
+                        }
+                    }
+                }
+
             }
+            Divider(color = Color.Red)
         }
+    }
 }
