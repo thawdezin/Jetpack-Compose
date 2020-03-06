@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LayoutTestingActivity"></activity>
+        <activity android:name=".TestingActivity"></activity>
+        <activity android:name=".LayoutTestingActivity" />
         <activity android:name=".ScrollerOnDataChange" />
         <activity android:name=".MultiViewWithoutFragment" />
         <activity android:name=".SplashScreenActivity" />

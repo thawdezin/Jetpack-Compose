@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                         showButton(BottomNavigationActivity::class.javaObjectType as Class<Any>)
                         showButton(TextChangedOnButtonClickActivity::class.javaObjectType as Class<Any>)
                         showButton(MultiViewWithoutFragment::class.javaObjectType as Class<Any>)
+                        showButton(TestingActivity::class.javaObjectType as Class<Any>)
                     }
                 }
            }
