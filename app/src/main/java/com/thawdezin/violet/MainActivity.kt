@@ -17,6 +17,7 @@ import androidx.ui.layout.Container
 import androidx.ui.material.*
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
+import com.thawdezin.violet.my.MyText
 
 @Suppress("UNCHECKED_CAST")
 class MainActivity : AppCompatActivity() {
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 elevation = 12.dp,
                 onClick = { startActivity(Intent(applicationContext, goTo)) }
             ){
-                Text(readableClassName)
+                MyText(text = readableClassName)
             }
         }
         Divider(color = Color.Transparent, height = 3.dp)
