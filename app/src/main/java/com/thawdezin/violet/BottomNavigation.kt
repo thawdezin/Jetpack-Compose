@@ -27,67 +27,67 @@ class BottomNavigation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-                AppBars()
+                //AppBars()
         }
     }
 }
 
-
-@Composable
-fun AppBars() {
-    val context = ambient(ContextAmbient)
-
-    Column {
-        TopAppBar(
-            navigationIcon = {
-                AppBarIcon(
-                    //imageResource(
-                    Image(3, 3, ImageConfig.Argb8888, true, ColorSpaces.Srgb)
-
-                ) { Toast.makeText(context, "Menu", Toast.LENGTH_LONG).show() }
-            },
-            title = { Text(text = "Jetpack Compose") }, actionData = listOf(
-                Image(3, 3, ImageConfig.Argb8888, true, ColorSpaces.Srgb)
-            )
-        )
-        { actionImage ->
-            AppBarIcon(actionImage) { Toast.makeText(context, "Search", Toast.LENGTH_LONG).show() }
-        }
-
-        Container(alignment = Alignment.BottomCenter, expanded = true) {
-            BottomAppBar(
-                color = Color.Green,
-                navigationIcon = {
-                    AppBarIcon(
-                        Image(3, 3, ImageConfig.Argb8888, true, ColorSpaces.Ntsc1953)
-                    ) {
-                        Toast.makeText(context, "Home", Toast.LENGTH_LONG).show()
-                    }
-                }
-                ,
-//                fabConfiguration = BottomAppBar.FabConfiguration(cutoutShape = CircleShape) {
-//                    FloatingActionButton(
-//                        color = (+MaterialTheme.colors()).secondary,
-//                        icon = +imageResource(R.drawable.ic_violet),
-//                        onClick = { Toast.makeText(context, "Fab", Toast.LENGTH_LONG).show() })
-//                },
-                actionData = listOf(
-                   // Image(12, 13, ImageConfig.Argb8888, true, ColorSpaces.Ntsc1953),
-                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg),
-                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg),
-                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg)
-                    ///Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
-                    //Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
-
-
-
-                )
-            ) { actionImage ->
-                AppBarIcon(actionImage) {
-                    Toast.makeText(context, "Profile", Toast.LENGTH_LONG).show()
-                }
-            }
-        }
-    }
-}
-
+//
+//@Composable
+//fun AppBars() {
+//    val context = ContextAmbient.current
+//
+//    Column {
+//        TopAppBar(
+//            navigationIcon = {
+//                AppBarIcon(
+//                    //imageResource(
+//                    //Image(3, 3, ImageConfig.Argb8888, true, ColorSpaces.Srgb)
+//
+//                ) { Toast.makeText(context, "Menu", Toast.LENGTH_LONG).show() }
+//            },
+//            title = { Text(text = "Jetpack Compose") }, actionData = listOf(
+//                Image(3, 3, ImageConfig.Argb8888, true, ColorSpaces.Srgb)
+//            )
+//        )
+//        { actionImage ->
+//            //AppBarIcon(actionImage) { Toast.makeText(context, "Search", Toast.LENGTH_LONG).show() }
+//        }
+//
+//        Container(alignment = Alignment.BottomCenter, expanded = true) {
+//            BottomAppBar(
+//                color = Color.Green,
+//                navigationIcon = {
+//                    AppBarIcon(
+//                        //Image(3, 3, ImageConfig.Argb8888, true, ColorSpaces.Ntsc1953)
+//                    ) {
+//                        Toast.makeText(context, "Home", Toast.LENGTH_LONG).show()
+//                    }
+//                }
+//                ,
+////                fabConfiguration = BottomAppBar.FabConfiguration(cutoutShape = CircleShape) {
+////                    FloatingActionButton(
+////                        color = (+MaterialTheme.colors()).secondary,
+////                        icon = +imageResource(R.drawable.ic_violet),
+////                        onClick = { Toast.makeText(context, "Fab", Toast.LENGTH_LONG).show() })
+////                },
+//                actionData = listOf(
+//                   // Image(12, 13, ImageConfig.Argb8888, true, ColorSpaces.Ntsc1953),
+//                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg),
+//                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg),
+//                    Image(33, 33, ImageConfig.Rgb565, false, ColorSpaces.Acescg)
+//                    ///Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
+//                    //Image(23, 23, ImageConfig.F16, true, ColorSpaces.SmpteC)
+//
+//
+//
+//                )
+//            ) { actionImage ->
+//                AppBarIcon(actionImage) {
+//                    Toast.makeText(context, "Profile", Toast.LENGTH_LONG).show()
+//                }
+//            }
+//        }
+//    }
+//}
+//

@@ -9,7 +9,7 @@ import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.layout.Column
 import androidx.ui.material.Button
-import androidx.ui.material.OutlinedButtonStyle
+//import androidx.ui.material.OutlinedButtonStyle
 import java.util.*
 
 
@@ -51,16 +51,18 @@ class DateTimeActivity : AppCompatActivity() {
 
         setContent {
             Column {
-                Button(text = "Date",
-                    style = OutlinedButtonStyle(),
-                    onClick = {
-                        datePickerDialog.show()
-                    })
-                Button(text = "Time",
-                    style = OutlinedButtonStyle(),
+                Button(
                     onClick = {
                         timePickerDialog.show()
-                    })
+                    }){
+                    Text("Time")
+                }
+                Button(
+                    onClick = {
+                        timePickerDialog.show()
+                    }){
+                    Text("Time")
+                }
             }
         }
     }
