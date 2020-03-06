@@ -8,7 +8,7 @@ import androidx.compose.Composable
 import androidx.compose.Model
 import androidx.compose.state
 import androidx.compose.unaryPlus
-import androidx.ui.core.EditorModel
+
 import androidx.ui.core.Text
 import androidx.ui.core.TextField
 import androidx.ui.core.setContent
@@ -40,23 +40,23 @@ class TextChangedOnButtonClickActivity : AppCompatActivity() {
 
 @Composable
 fun loadUi() {
-    val state = state { EditorModel("smth") }
+    //val state = state { EditorModel("smth") }
     val cState: CounterState = CounterState()
     Column {
-        TextField(
-            value = state.value,
-            onValueChange = { new ->
-                state.value = if (new.text.any { it == '\n' }) {
-                    state.value
-                } else {
-                    new
-                }
-            },
-            keyboardType = KeyboardType.Text,
-            imeAction = ImeAction.Search,
-            textStyle = TextStyle(color = Color.DarkGray)
-            //onImeActionPerformed = onImeActionPerformed
-        )
+//        TextField(
+//            value = state.value,
+//            onValueChange = { new ->
+//                state.value = if (new.text.any { it == '\n' }) {
+//                    state.value
+//                } else {
+//                    new
+//                }
+//            },
+//            keyboardType = KeyboardType.Text,
+//            imeAction = ImeAction.Search,
+//            textStyle = TextStyle(color = Color.DarkGray)
+//            //onImeActionPerformed = onImeActionPerformed
+//        )
         cState.txt = "OK" //state.value.toString()
         //Divider(color = Color.Red)
         CallSecondView(state = cState)
@@ -80,10 +80,12 @@ fun CallSecondView(state: CounterState) {
 
     Column() {
         Text("${state.count} and ${state.txt}")
-        Button(text = "I've been clicked ${state.count} times",
+        Button(
             onClick = {
                 state.count++
-            })
+            }){
+            Text("I've been clicked ${state.count} times")
+        }
         Toast.makeText(application,state.count.toString(), Toast.LENGTH_LONG).show()
     }
 }

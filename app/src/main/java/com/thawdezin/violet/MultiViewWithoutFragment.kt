@@ -6,11 +6,11 @@ import androidx.compose.Composable
 import androidx.compose.Model
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
-import androidx.ui.foundation.background
+
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container
-import androidx.ui.layout.FlexColumn
+
 import androidx.ui.layout.LayoutPadding
 import androidx.ui.material.Button
 import androidx.ui.material.MaterialTheme
@@ -65,7 +65,7 @@ private fun primaryView(state: Changes) {
 @Preview("First View")
 @Composable
 fun FirstView(){
-    Container(background(Color.Black)){
+    Container(){
         Text("First View", style = TextStyle(color = Color.Green, fontSize = 32.sp))
     }
 
@@ -74,7 +74,7 @@ fun FirstView(){
 @Preview("Second View")
 @Composable
 fun SecondView(){
-    Container(background(Color.Red)) {
+    Container() {
         Text("Second View", style = TextStyle(color = Color.Yellow, fontSize = 32.sp))
     }
 }

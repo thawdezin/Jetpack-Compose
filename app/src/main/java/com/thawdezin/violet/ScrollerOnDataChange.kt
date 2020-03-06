@@ -9,7 +9,7 @@ import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.foundation.HorizontalScroller
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.foundation.background
+
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Center
 import androidx.ui.layout.Column
@@ -46,13 +46,19 @@ class ScrollerOnDataChange : AppCompatActivity() {
                 //LayoutPlaygroundButtonView()
                 Row() {
                     Container(LayoutFlexible(1f), expanded = true) {
-                        Button(onClick = { state.count++ }, text = "Click to Increase 1")
+                        Button(onClick = { state.count++ }){
+                            Text("Click to Increase 1")
+                        }
                     }
                     Container(LayoutFlexible(1f), expanded = true) {
-                        Button(onClick = { state.count-- }, text = "Click to decrease 1")
+                        Button(onClick = { state.count-- }){
+                            Text("Click to decrease 1")
+                        }
                     }
                     Container(LayoutFlexible(1f), expanded = true) {
-                        Button(onClick = { state.count = 0 }, text = "Click to Reset")
+                        Button(onClick = { state.count = 0 }){
+                            Text("Click to Reset")
+                        }
                     }
                 }
             }

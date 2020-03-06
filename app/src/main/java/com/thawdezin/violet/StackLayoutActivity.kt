@@ -3,11 +3,8 @@ package com.thawdezin.violet
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.compose.Composable
-import androidx.ui.core.Alignment
-import androidx.ui.core.Clip
-import androidx.ui.core.Text
-import androidx.ui.core.setContent
-import androidx.ui.foundation.background
+import androidx.ui.core.*
+
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
@@ -37,7 +34,7 @@ fun MainContainer() {
             Align(Alignment.TopCenter) {
                 Column(arrangement = Arrangement.Center) {
                     Container(
-                        background(Color.Green),
+                        //background(Color.Green),
                         alignment = Alignment.TopCenter,
                         //height = 350.dp,
                         width = 450.dp,
@@ -50,7 +47,8 @@ fun MainContainer() {
             }
 
             Align(alignment = Alignment.BottomCenter) {
-                Column(background(Color.Yellow), arrangement = Arrangement.Center) {
+                Column(//background(Color.Yellow),
+                    arrangement = Arrangement.Center) {
                     Container(
                         alignment = Alignment.Center,
                         height = 350.dp,
@@ -63,7 +61,7 @@ fun MainContainer() {
             }
 
             Align(Alignment.Center) {
-                Column(background(Color.White), arrangement = Arrangement.Center) {
+                Column(arrangement = Arrangement.Center) {//background(Color.White),
                     Container(alignment = Alignment.Center, height = 250.dp, width = 250.dp) {
                         Clip(shape = RoundedCornerShape(8.dp)) {
                             LoginContainer()
@@ -82,7 +80,9 @@ fun LoginContainer() {
         //DrawImage(image = img)
         Text("Username")
         Text("Password")
-        Button("Login")
+        Button(){
+            Text("Login")
+        }
     }
 }
 

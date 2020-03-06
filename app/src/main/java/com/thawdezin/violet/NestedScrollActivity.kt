@@ -11,7 +11,7 @@ import androidx.ui.core.setContent
 import androidx.ui.foundation.HorizontalScroller
 import androidx.ui.foundation.ScrollerPosition
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.foundation.background
+
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Center
 import androidx.ui.layout.Column
@@ -50,7 +50,7 @@ fun oneToHorizontal(){
             Row {
                 for (i in 1..100){
                     Center{
-                        Container(background(Color.Transparent), width = 60.dp, height = 60.dp, alignment = Alignment.Center){
+                        Container(width = 60.dp, height = 60.dp, alignment = Alignment.Center){ //background(Color.Transparent),
                             Text("$i")
                         }
                     }
@@ -90,7 +90,7 @@ fun aToZhorizontal(){
 
                 if(i == 'k'){
                     Center{
-                        Container(background(Color.Green), width = 100.dp, height = 100.dp, alignment = Alignment.Center){
+                        Container(width = 100.dp, height = 100.dp, alignment = Alignment.Center){ //background(Color.Green),
                             oneToHorizontal()
                         }
                     }
@@ -98,7 +98,7 @@ fun aToZhorizontal(){
                 }
                 else{
                     Center{
-                        Container(background(Color.Transparent),height = 100.dp, alignment = Alignment.Center){
+                        Container(height = 100.dp, alignment = Alignment.Center){ //background(Color.Transparent),
                             Text("$i")
                         }
                     }
@@ -119,7 +119,7 @@ fun aToZvertical(){
 
                 if(i == 'k'){
                     Center{
-                        Container(background(Color.Green), width = 100.dp, height = 100.dp, alignment = Alignment.Center){
+                        Container(width = 100.dp, height = 100.dp, alignment = Alignment.Center){ //background(Color.Green),
                             oneToHorizontal()
                         }
                     }
@@ -127,7 +127,7 @@ fun aToZvertical(){
                 }
                 else{
                     Center{
-                        Container(background(Color.Transparent),height = 100.dp, alignment = Alignment.Center){
+                        Container(height = 100.dp, alignment = Alignment.Center){ //background(Color.Transparent),
                             Text("$i")
                         }
                     }

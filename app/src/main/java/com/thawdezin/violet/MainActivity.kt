@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.ui.core.Alignment
+import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
@@ -58,32 +59,34 @@ class MainActivity : AppCompatActivity() {
 
         Container(expanded = true, alignment = Alignment.Center) {
             Button(
-                text = readableClassName,
-                style = ContainedButtonStyle(backgroundColor = Color.Green,
-                contentColor = Color.Black, elevation = 12.dp),
+                backgroundColor = Color.Green,
+                contentColor = Color.Black,
+                elevation = 12.dp,
                 onClick = { startActivity(Intent(applicationContext, goTo)) }
-            )
+            ){
+                Text(readableClassName)
+            }
         }
         Divider(color = Color.Transparent, height = 3.dp)
     }
 }//MainActivity
 
 
-
-@Composable
-fun BottomAppBarNoFab(getMyActionImage: () -> Image, getMyNavigationImage: () -> Image) {
-    val someActionImage: Image = getMyActionImage()
-    val someNavigationImage: Image = getMyNavigationImage()
-    val navigationIcon: @Composable() () -> Unit = {
-        AppBarIcon(someNavigationImage) { /* doSomething()*/ }
-    }
-    val actionData = listOf(someActionImage)
-    BottomAppBar(
-        navigationIcon = navigationIcon,
-        actionData = actionData
-    ) { actionImage ->
-        AppBarIcon(actionImage) { /* doSomething()*/ }
-    }
-}
+//
+//@Composable
+//fun BottomAppBarNoFab(getMyActionImage: () -> Image, getMyNavigationImage: () -> Image) {
+//    val someActionImage: Image = getMyActionImage()
+//    val someNavigationImage: Image = getMyNavigationImage()
+//    val navigationIcon: @Composable() () -> Unit = {
+//        AppBarIcon(someNavigationImage) { /* doSomething()*/ }
+//    }
+//    val actionData = listOf(someActionImage)
+//    BottomAppBar(
+//        navigationIcon = navigationIcon,
+//        actionData = actionData
+//    ) { actionImage ->
+//        AppBarIcon(actionImage) { /* doSomething()*/ }
+//    }
+//}
 
 

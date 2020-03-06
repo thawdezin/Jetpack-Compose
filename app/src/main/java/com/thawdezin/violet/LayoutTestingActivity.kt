@@ -8,6 +8,7 @@ import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.foundation.AdapterList
 import androidx.ui.foundation.Clickable
+import androidx.ui.graphics.Color
 import androidx.ui.layout.*
 import androidx.ui.material.Button
 import androidx.ui.material.surface.Card

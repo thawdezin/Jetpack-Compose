@@ -9,7 +9,6 @@ import androidx.compose.Composable
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.layout.Center
-import androidx.ui.layout.FlexColumn
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.TopAppBar
 import com.thawdezin.violet.R
@@ -31,20 +30,20 @@ class ThawFragment : Fragment() {
 
     @Composable
     fun Hello(name: String) = MaterialTheme {
-        FlexColumn {
-            inflexible {
-                // Item height will be equal content height
-                TopAppBar( // App Bar with title
-                    title = { Text("Jetpack Compose Sample") }
-                )
-            }
-            expanded(1F) {
-                // occupy whole empty space in the Column
-                Center {
-                    // Center content
-                    Text("Hello $name!") // Text label
-                }
-            }
-        }
+//        FlexColumn {
+//            inflexible {
+//                // Item height will be equal content height
+//                TopAppBar( // App Bar with title
+//                    title = { Text("Jetpack Compose Sample") }
+//                )
+//            }
+//            expanded(1F) {
+//                // occupy whole empty space in the Column
+//                Center {
+//                    // Center content
+//                    Text("Hello $name!") // Text label
+//                }
+//            }
+//        }
     }
 }
