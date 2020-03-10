@@ -40,7 +40,7 @@ class LayoutTestingActivity : AppCompatActivity() {
     @Composable
     fun MainView(state: CheckState) {
         AdapterList(
-            data = (state.count..12).map { it }.toList()
+            data = (0..12).map { it }.toList()
         ) {
             if (it % 2 == 0) {
                 Text("$it Even", style = TextStyle(fontSize = 40.sp, color = Color.Gray))
