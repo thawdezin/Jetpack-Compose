@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                         showButton(TextChangedOnButtonClickActivity::class.javaObjectType as Class<Any>)
                         showButton(MultiViewWithoutFragment::class.javaObjectType as Class<Any>)
                         showButton(TestingActivity::class.javaObjectType as Class<Any>)
+                        showButton(FullFeatureTableActivity::class.javaObjectType as Class<Any>)
                     }
                 }
            }
