@@ -5,5 +5,5 @@ Viola is a genus of flowering plants in the violet family Violaceae. It is the l
 Violet is the flower of February. I've started this project in February 19, 2020. So, I named this project VIOLET as code name.
 In this project, there is NO JAVA CODE and NO XML LAYOUTS.
 
-
+Goodbye RecyclerView! さようなら 🤣🤣🤣
 ![Image Nested Scroller](https://github.com/thawdezin/Jetpack-Compose/blob/master/goodbye_recyclerView.jpg)
