@@ -6,4 +6,4 @@ Violet is the flower of February. I've started this project in February 19, 2020
 In this project, there is NO JAVA CODE and NO XML LAYOUTS.
 
 
-![Image Nested Scroller](https://github.com/thawdezin/Violet/blob/master/heterogeneous_scroller.jpg)
+![Image Nested Scroller](https://github.com/thawdezin/Jetpack-Compose/blob/master/goodbye_recyclerView.jpg)
