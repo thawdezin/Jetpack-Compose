@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.compose.Composable
 import androidx.compose.Model
-import androidx.ui.core.Text
+import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
-import androidx.ui.foundation.DrawImage
+//import androidx.ui.foundation.DrawImage
 import androidx.ui.foundation.SimpleImage
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
-import androidx.ui.graphics.Image
-import androidx.ui.graphics.ImageConfig
+import androidx.ui.foundation.Image
+//import androidx.ui.foundation.ImageConfig
 import androidx.ui.graphics.colorspace.ColorSpaces
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container
@@ -83,7 +83,8 @@ class ImageActivity : AppCompatActivity() {
 
             Column{
                 Container(width= 200.dp, height = 200.dp){
-                    DrawImage(image = img)
+                    //DrawImage(image = img)
+
                     //imageView.load(R.drawable.developer)
                 }
                 //SimpleImage(imageResource(id = R.drawable.qr), tint = Color.Green)

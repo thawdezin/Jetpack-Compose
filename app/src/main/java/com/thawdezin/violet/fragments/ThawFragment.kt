@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.Composable
-import androidx.ui.core.Text
+import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
 import androidx.ui.layout.Center
 import androidx.ui.material.MaterialTheme

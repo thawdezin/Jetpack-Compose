@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import androidx.ui.core.Text
+import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
 import androidx.ui.text.TextStyle
 import androidx.ui.text.font.FontWeight

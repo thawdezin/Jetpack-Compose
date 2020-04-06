@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.ui.core.Alignment
-import androidx.ui.core.Text
+import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
 import androidx.ui.foundation.HorizontalScroller
 import androidx.ui.foundation.VerticalScroller
@@ -16,7 +16,7 @@ import androidx.ui.layout.Row
 import androidx.ui.material.Divider
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Scaffold
-import androidx.ui.material.surface.Card
+import androidx.ui.material.Card
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 

@@ -7,10 +7,10 @@ import android.widget.Toast
 import androidx.compose.Composable
 import androidx.compose.Model
 import androidx.compose.state
-import androidx.compose.unaryPlus
+//import androidx.compose.unaryPlus
 
-import androidx.ui.core.Text
-import androidx.ui.core.TextField
+import androidx.ui.foundation.Text
+import androidx.ui.foundation.TextField
 import androidx.ui.core.setContent
 import androidx.ui.graphics.Color
 import androidx.ui.input.ImeAction

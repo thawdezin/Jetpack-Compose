@@ -10,7 +10,7 @@ import androidx.ui.core.Alignment
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
-import androidx.ui.graphics.Image
+import androidx.ui.foundation.Image
 import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container

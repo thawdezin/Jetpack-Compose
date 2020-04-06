@@ -4,18 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.compose.Composable
 import androidx.compose.Model
-import androidx.ui.core.Text
+import androidx.ui.core.Modifier
+import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
 
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Column
+import androidx.ui.layout.ColumnScope.weight
 import androidx.ui.layout.Container
 
 import androidx.ui.layout.LayoutPadding
+import androidx.ui.layout.LayoutWidth
 import androidx.ui.material.Button
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Scaffold
-import androidx.ui.material.surface.Card
+import androidx.ui.material.Card
 import androidx.ui.text.TextStyle
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
@@ -42,8 +45,8 @@ class MultiViewWithoutFragment : AppCompatActivity() {
 @Composable
 private fun primaryView(state: Changes) {
     Column(){
-        Card(modifier = LayoutFlexible(1f), color = Color.Green){
-            Container(LayoutFlexible(1f), expanded = true){
+        Card(modifier = Modifier.weight(1f), color = Color.Green){
+            Container(LayoutWeight(1f), expanded = true){
                 if(state.count %2 == 0){
                     FirstView()
                 }
@@ -52,8 +55,8 @@ private fun primaryView(state: Changes) {
                 }
             }
         }
-        Card(modifier = LayoutFlexible(1f), color = Color.Yellow){
-            Container(LayoutFlexible(1f), expanded = true){
+        Card(modifier = LayoutWeight(1f), color = Color.Yellow){
+            Container(LayoutWeight(1f), expanded = true){
                 Button(onClick = {state.count++}){
                     Text("Click me to see what happens")
                 }

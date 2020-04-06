@@ -1,15 +1,18 @@
 package com.thawdezin.violet
 
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.compose.Composable
 import androidx.ui.core.*
+import androidx.ui.foundation.Text
 
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
 import androidx.ui.material.Button
 import androidx.ui.material.Scaffold
+import androidx.ui.text.style.TextOverflow
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 
@@ -31,7 +34,7 @@ fun MainContainer() {
     Scaffold {
         Stack {
 
-            Align(Alignment.TopCenter) {
+            //Align(Alignment.TopCenter) {
                 Column(arrangement = Arrangement.Center) {
                     Container(
                         //background(Color.Green),
@@ -44,9 +47,9 @@ fun MainContainer() {
                     }
 
                 }
-            }
+            //}
 
-            Align(alignment = Alignment.BottomCenter) {
+            //Align(alignment = Alignment.BottomCenter) {
                 Column(//background(Color.Yellow),
                     arrangement = Arrangement.Center) {
                     Container(
@@ -58,17 +61,17 @@ fun MainContainer() {
                         Text("Down")
                     }
                 }
-            }
+            //}
 
-            Align(Alignment.Center) {
+            //Align(Alignment.Center) {
                 Column(arrangement = Arrangement.Center) {//background(Color.White),
                     Container(alignment = Alignment.Center, height = 250.dp, width = 250.dp) {
-                        Clip(shape = RoundedCornerShape(8.dp)) {
+                        //TextOverflow.Clip(shape = RoundedCornerShape(8.dp)) {
                             LoginContainer()
-                        }
+                        //}
                     }
                 }
-            }
+            //}
         }
     }
 }
@@ -80,7 +83,7 @@ fun LoginContainer() {
         //DrawImage(image = img)
         Text("Username")
         Text("Password")
-        Button(){
+        Button(onClick = {}){
             Text("Login")
         }
     }

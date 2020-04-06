@@ -5,16 +5,16 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.ui.core.Alignment
-import androidx.ui.core.Text
 import androidx.ui.core.setContent
+import androidx.ui.foundation.Text
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
-import androidx.ui.graphics.Image
-import androidx.ui.graphics.Shape
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container
-import androidx.ui.material.*
+import androidx.ui.material.Button
+import androidx.ui.material.Divider
+import androidx.ui.material.MaterialTheme
+import androidx.ui.material.Scaffold
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.thawdezin.violet.my.MyText
@@ -34,7 +34,9 @@ class MainActivity : AppCompatActivity() {
         MaterialTheme {
             Scaffold {
                 VerticalScroller {
-                    Column  {
+                    Column {
+                        
+
                         showButton(LayoutTestingActivity::class.javaObjectType as Class<Any>)
                         showButton(ScrollerOnDataChange::class.javaObjectType as Class<Any>)
                         showButton(StackLayoutActivity::class.javaObjectType as Class<Any>)
@@ -49,16 +51,19 @@ class MainActivity : AppCompatActivity() {
                         showButton(MultiViewWithoutFragment::class.javaObjectType as Class<Any>)
                         showButton(TestingActivity::class.javaObjectType as Class<Any>)
                         showButton(FullFeatureTableActivity::class.javaObjectType as Class<Any>)
+                        showButton(DrawModel::class.javaObjectType as Class<Any>)
                     }
                 }
-           }
+            }
         }
     }
 
+    @Composable
     private fun showButton(goTo: Class<Any>?) {
 
-        val readableClassName = goTo!!.simpleName.split(("(?=\\p{Upper})").toRegex()).dropLastWhile { it.isEmpty() }
-            .toTypedArray().joinToString(prefix = "", postfix = "", separator = " ")
+        val readableClassName =
+            goTo!!.simpleName.split(("(?=\\p{Upper})").toRegex()).dropLastWhile { it.isEmpty() }
+                .toTypedArray().joinToString(prefix = "", postfix = "", separator = " ")
 
         Container(expanded = true, alignment = Alignment.Center) {
             Button(
@@ -66,8 +71,8 @@ class MainActivity : AppCompatActivity() {
                 contentColor = Color.Black,
                 elevation = 12.dp,
                 onClick = { startActivity(Intent(applicationContext, goTo)) }
-            ){
-                MyText(text = readableClassName)
+            ) {
+                Text(text = readableClassName)
             }
         }
         Divider(color = Color.Transparent, height = 3.dp)

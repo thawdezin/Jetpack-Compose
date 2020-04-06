@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.Menu
 import androidx.compose.Composable
 import androidx.compose.Model
-import androidx.ui.core.Text
+import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
 import androidx.ui.layout.Column
 import androidx.ui.material.DataTable

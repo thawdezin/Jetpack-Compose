@@ -5,8 +5,9 @@ import android.app.TimePickerDialog
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
-import androidx.ui.core.Text
+//import androidx.ui.core.Text
 import androidx.ui.core.setContent
+import androidx.ui.foundation.Text
 import androidx.ui.layout.Column
 import androidx.ui.material.Button
 //import androidx.ui.material.OutlinedButtonStyle
@@ -17,7 +18,6 @@ class DateTimeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)

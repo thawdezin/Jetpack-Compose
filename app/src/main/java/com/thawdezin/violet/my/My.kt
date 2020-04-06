@@ -3,6 +3,7 @@ package com.thawdezin.violet.my
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.ui.core.*
+import androidx.ui.foundation.Text
 import androidx.ui.graphics.Color
 import androidx.ui.text.AnnotatedString
 import androidx.ui.text.TextLayoutResult
@@ -38,7 +39,7 @@ private val DefaultOverflow: TextOverflow = TextOverflow.Clip
     )
     }
      */
-
+@Composable
 fun MyText(
     text: String,
     modifier: Modifier = Modifier.None,
@@ -48,13 +49,15 @@ fun MyText(
     maxLines: Int = DefaultMaxLines,
     onTextLayout: (TextLayoutResult) -> Unit = {}
 ) {
-    Text(
-        text = AnnotatedString(text),
-        modifier = modifier,
-        style = style,
-        softWrap = softWrap,
-        overflow = overflow,
-        maxLines = maxLines,
-        onTextLayout = onTextLayout
-    )
+        style?.let {
+            Text(
+            text = AnnotatedString(text),
+            modifier = modifier,
+            style = it,
+            softWrap = softWrap,
+            overflow = overflow,
+            maxLines = maxLines,
+            onTextLayout = onTextLayout
+        )
+        }
 }
