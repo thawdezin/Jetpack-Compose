@@ -8,14 +8,15 @@ import androidx.compose.Model
 import androidx.compose.remember
 import androidx.ui.animation.animate
 import androidx.ui.core.DrawClipToBounds
-import androidx.ui.foundation.Text
+import androidx.ui.core.Modifier
+import androidx.ui.core.clipToBounds
 import androidx.ui.core.drawLayer
-import androidx.ui.foundation.Border
-import androidx.ui.foundation.Box
-import androidx.ui.foundation.Icon
+import androidx.ui.foundation.*
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
+import androidx.ui.layout.ColumnScope.gravity
+import androidx.ui.layout.ColumnScope.weight
 import androidx.ui.material.*
 import androidx.ui.material.icons.Icons
 import androidx.ui.material.icons.filled.Add
@@ -40,7 +41,7 @@ fun App() {
 
     Column() {
         Config(model)
-        Spacer(modifier = LayoutWeight(1f))
+        Spacer(modifier = Modifier.weight(1f))
         Display(model)
     }
 }
@@ -111,12 +112,12 @@ private fun ColumnScope.Display(model: DrawModel) {
     }
 
     Box(
-        modifier = DrawClipToBounds + LayoutGravity.Center,
+        modifier = Modifier.clipToBounds() + Modifier.gravity(ColumnAlign.Center),
         padding = 24.dp
     ) {
         Center {
             Surface(
-                modifier = LayoutAspectRatio(1f) + drawLayer(
+                modifier = Modifier.aspectRatio(1f) + drawLayer(
                     scaleX = animate(model.scaleX, animBuilder = anim),
                     scaleY = animate(model.scaleY, animBuilder = anim),
                     rotationX = animate(model.rotationX, animBuilder = anim),
@@ -139,12 +140,12 @@ private fun ColumnScope.Display(model: DrawModel) {
                     },
                     floatingActionButton = { FloatingActionButton(onClick = {}) { Icon(Icons.Default.Add) } }
                 ) {
-                    Center {
+                    Box(Modifier.fillMaxSize(), gravity = ContentGravity.Center, children = {
                         Column {
                             Text("Some text")
                             CircularProgressIndicator()
                         }
-                    }
+                    })
                 }
             }
         }

@@ -36,12 +36,10 @@ class MainActivity : AppCompatActivity() {
                 VerticalScroller {
                     Column {
                         
-
                         showButton(LayoutTestingActivity::class.javaObjectType as Class<Any>)
                         showButton(ScrollerOnDataChange::class.javaObjectType as Class<Any>)
                         showButton(StackLayoutActivity::class.javaObjectType as Class<Any>)
                         showButton(NestedScrollActivity::class.javaObjectType as Class<Any>)
-                        showButton(BottomNavigation::class.javaObjectType as Class<Any>)
                         showButton(ImageActivity::class.javaObjectType as Class<Any>)
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
                         showButton(DateTimeActivity::class.javaObjectType as Class<Any>)
@@ -52,6 +50,7 @@ class MainActivity : AppCompatActivity() {
                         showButton(TestingActivity::class.javaObjectType as Class<Any>)
                         showButton(FullFeatureTableActivity::class.javaObjectType as Class<Any>)
                         showButton(DrawModel::class.javaObjectType as Class<Any>)
+                        showButton(goTo = April25TutorialActivity::class.javaObjectType as Class<Any>)
                     }
                 }
             }

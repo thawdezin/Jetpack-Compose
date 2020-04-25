@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DrawLayerActivity"></activity>
+        <activity android:name=".April25TutorialActivity"></activity>
         <activity android:name=".FullFeatureTableActivity" />
         <activity android:name="com.thawdezin.TestLayoutActivity" />
         <activity android:name=".TestingActivity" />
@@ -23,7 +23,6 @@
         <activity android:name=".FragmentContainerActivity" />
         <activity android:name=".DateTimeActivity" />
         <activity android:name=".ImageActivity" />
-        <activity android:name=".BottomNavigation" />
         <activity android:name=".NestedScrollActivity" />
         <activity android:name=".StackLayoutActivity" />
         <activity
