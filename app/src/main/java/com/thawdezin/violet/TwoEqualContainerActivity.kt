@@ -6,6 +6,7 @@ import androidx.ui.core.Alignment
 import androidx.ui.core.Modifier
 import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
+import androidx.ui.foundation.Box
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
 import androidx.ui.layout.RowScope.weight
@@ -24,12 +25,12 @@ class TwoEqualContainerActivity : AppCompatActivity() {
             MaterialTheme {
                 MaterialTheme {
                     Row {
-                        Container(modifier = Modifier.weight(1f), alignment = Alignment.TopCenter, expanded = true) {
+                        Box(modifier = Modifier.weight(1f)) {
                             Column() {
                                 Text(text = "Centered ", style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold))
                             }
                         }
-                        Container(modifier = Modifier.weight(1f), alignment = Alignment.TopStart, expanded = true) {
+                        Box(modifier = Modifier.weight(1f), gravity = Alignment.TopStart) {
                             Column {
                                 Text(text = "Line One ", style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold))
                                 Text(text = "Line Two ", style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold))

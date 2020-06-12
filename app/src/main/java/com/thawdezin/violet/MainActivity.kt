@@ -6,18 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.ui.core.Alignment
 import androidx.ui.core.setContent
+import androidx.ui.foundation.Box
 import androidx.ui.foundation.Text
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Column
-import androidx.ui.layout.Container
 import androidx.ui.material.Button
 import androidx.ui.material.Divider
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Scaffold
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-import com.thawdezin.violet.my.MyText
 
 @Suppress("UNCHECKED_CAST")
 class MainActivity : AppCompatActivity() {
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             goTo!!.simpleName.split(("(?=\\p{Upper})").toRegex()).dropLastWhile { it.isEmpty() }
                 .toTypedArray().joinToString(prefix = "", postfix = "", separator = " ")
 
-        Container(expanded = true, alignment = Alignment.Center) {
+        Box(gravity = Alignment.Center) {
             Button(
                 backgroundColor = Color.Green,
                 contentColor = Color.Black,
@@ -74,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                 Text(text = readableClassName)
             }
         }
-        Divider(color = Color.Transparent, height = 3.dp)
+        Divider(color = Color.Transparent, thickness = 3.dp)
     }
 }//MainActivity
 

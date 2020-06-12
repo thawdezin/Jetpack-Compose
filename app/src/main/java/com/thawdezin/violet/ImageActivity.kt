@@ -1,27 +1,17 @@
 package com.thawdezin.violet
 
-import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.compose.Composable
-import androidx.compose.Model
-import androidx.ui.foundation.Text
+import androidx.appcompat.app.AppCompatActivity
+import androidx.ui.core.Modifier
 import androidx.ui.core.setContent
-//import androidx.ui.foundation.DrawImage
-import androidx.ui.foundation.SimpleImage
-import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.Color
-import androidx.ui.foundation.Image
-//import androidx.ui.foundation.ImageConfig
-import androidx.ui.graphics.colorspace.ColorSpaces
+import androidx.ui.foundation.Box
 import androidx.ui.layout.Column
-import androidx.ui.layout.Container
-import androidx.ui.material.MaterialTheme
+import androidx.ui.layout.height
+import androidx.ui.layout.width
 import androidx.ui.res.imageResource
 import androidx.ui.unit.dp
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
+
+//import kotlinx.android.synthetic.main.activity_test_layout.*
 
 //class ImageActivity : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +48,7 @@ import kotlinx.coroutines.launch
 //
 //    Column {
 //        Text(item.name)
-//        Container(width = 180.dp, height = 180.dp) {
+//        Box(width = 180.dp, height = 180.dp) {
 //            DrawImage(image = state.image)
 //        }
 //    }
@@ -78,11 +68,11 @@ import kotlinx.coroutines.launch
 class ImageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent{
+        setContent {
             val img = imageResource(id = R.drawable.developer)
 
-            Column{
-                Container(width= 200.dp, height = 200.dp){
+            Column {
+                Box(modifier = Modifier.width(200.dp).height(200.dp)) {
                     //DrawImage(image = img)
 
                     //imageView.load(R.drawable.developer)

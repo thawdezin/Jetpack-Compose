@@ -7,7 +7,6 @@ import androidx.compose.Composable
 //import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
-import androidx.ui.layout.Container
 import androidx.ui.layout.Row
 import androidx.ui.material.Card
 import androidx.ui.material.MaterialTheme
@@ -25,7 +24,6 @@ class RallyActivity : AppCompatActivity() {
 
                 }
                 Card(){}
-                Container(){}
                 Row(){}
                 //TextOverflow.Clip(shape = RoundedCornerShape(20.dp)) {}
             }

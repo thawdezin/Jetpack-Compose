@@ -2,16 +2,12 @@ package com.thawdezin.violet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
 import androidx.compose.Composable
-import androidx.compose.Model
-import androidx.ui.foundation.Text
+import androidx.compose.Immutable
 import androidx.ui.core.setContent
 import androidx.ui.layout.Column
-import androidx.ui.material.DataTable
-import androidx.ui.material.DefaultDataTableSorting
-import androidx.ui.tooling.preview.Preview
+//import androidx.ui.material.DataTable
+//import androidx.ui.material.DefaultDataTableSorting
 
 class FullFeatureTableActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +20,7 @@ class FullFeatureTableActivity : AppCompatActivity() {
     }
 }
 
-@Model
+@Immutable
 data class MenuItem(val number: Int)
 
 @Composable
@@ -39,25 +35,25 @@ fun Table(){
 
 @Composable
 fun SortableTable(menuItems: MutableList<MenuItem>) {
-    DataTable(
-        columns = 1,
-        sorting = DefaultDataTableSorting(
-            sortableColumns = setOf(0),
-            onSortRequest = { _, isAscending ->
-                if (isAscending) {
-                    menuItems.sortBy { it.number }
-                } else {
-                    menuItems.sortByDescending { it.number }
-                }
-            })
-    ) {
-        headerRow {Text(text = "Number")}
-        for (menuItem in menuItems) {
-            dataRow {
-                Text("${menuItem.number}")
-            }
-        }
-    }
+//    DataTable(
+//        columns = 1,
+//        sorting = DefaultDataTableSorting(
+//            sortableColumns = setOf(0),
+//            onSortRequest = { _, isAscending ->
+//                if (isAscending) {
+//                    menuItems.sortBy { it.number }
+//                } else {
+//                    menuItems.sortByDescending { it.number }
+//                }
+//            })
+//    ) {
+//        //headerRow {Text(text = "Number")}
+//        for (menuItem in menuItems) {
+////            dataRow {
+////                Text("${menuItem.number}")
+////            }
+//        }
+//    }
 }
 
 

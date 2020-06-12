@@ -13,7 +13,6 @@ import androidx.ui.graphics.Color
 import androidx.ui.foundation.Image
 import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Column
-import androidx.ui.layout.Container
 import androidx.ui.material.*
 import androidx.ui.res.imageResource
 import androidx.ui.tooling.preview.Preview

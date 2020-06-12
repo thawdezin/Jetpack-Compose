@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.compose.Composable
 import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
-import androidx.ui.layout.Center
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.TopAppBar
 import com.thawdezin.violet.R

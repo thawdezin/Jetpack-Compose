@@ -3,25 +3,21 @@ package com.thawdezin.violet
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
-import androidx.compose.Model
-import androidx.ui.core.Alignment
+import androidx.compose.Immutable
 import androidx.ui.core.Modifier
-import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
-import androidx.ui.foundation.HorizontalScroller
+import androidx.ui.foundation.Box
+import androidx.ui.foundation.Text
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
-import androidx.ui.layout.*
-import androidx.ui.layout.ColumnScope.weight
+import androidx.ui.layout.Column
+import androidx.ui.layout.Row
 import androidx.ui.material.Button
-import androidx.ui.material.Divider
+import androidx.ui.material.Card
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Scaffold
-import androidx.ui.material.Card
-import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
 
-@Model
+@Immutable
 class ModelClass(var count: Int = 0)
 
 class ScrollerOnDataChange : AppCompatActivity() {
@@ -43,18 +39,18 @@ class ScrollerOnDataChange : AppCompatActivity() {
             Card(modifier = Modifier.weight(1f), color = Color.Yellow) {
                 //LayoutPlaygroundButtonView()
                 Row() {
-                    Container(Modifier.weight(1f), expanded = true) {
-                        Button(onClick = { state.count++ }){
+                    Box(Modifier.weight(1f)) {
+                        Button(onClick = { state.count++ }) {
                             Text("Click to Increase 1")
                         }
                     }
-                    Container(Modifier.weight(1f), expanded = true) {
-                        Button(onClick = { state.count-- }){
+                    Box(Modifier.weight(1f)) {
+                        Button(onClick = { state.count-- }) {
                             Text("Click to decrease 1")
                         }
                     }
-                    Container(Modifier.weight(1f), expanded = true) {
-                        Button(onClick = { state.count = 0 }){
+                    Box(Modifier.weight(1f)) {
+                        Button(onClick = { state.count = 0 }) {
                             Text("Click to Reset")
                         }
                     }
@@ -62,9 +58,10 @@ class ScrollerOnDataChange : AppCompatActivity() {
             }
             Card(modifier = Modifier.weight(8f), color = Color.Green) {
                 //LayoutPlaygroundScrollerView()
-               Container(modifier = LayoutWeight(8f), expanded = true) {
+                Box(modifier = Modifier.weight(8f)) {
                     oneToVertical(state)
                 }
+
             }
         }
     }
@@ -80,7 +77,7 @@ class ScrollerOnDataChange : AppCompatActivity() {
         VerticalScroller() {
             Column {
                 for (i in state.count..100) {
-                    Container(height = 100.dp, expanded = true){
+                    Box() {
                         Text("$i")
                     }
                 }

@@ -4,10 +4,10 @@ import androidx.animation.PhysicsBuilder
 import androidx.animation.Spring.DampingRatioHighBouncy
 import androidx.animation.Spring.StiffnessLow
 import androidx.compose.Composable
-import androidx.compose.Model
+import androidx.compose.Immutable
 import androidx.compose.remember
 import androidx.ui.animation.animate
-import androidx.ui.core.DrawClipToBounds
+import androidx.ui.core.Alignment
 import androidx.ui.core.Modifier
 import androidx.ui.core.clipToBounds
 import androidx.ui.core.drawLayer
@@ -15,16 +15,12 @@ import androidx.ui.foundation.*
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
-import androidx.ui.layout.ColumnScope.gravity
-import androidx.ui.layout.ColumnScope.weight
 import androidx.ui.material.*
 import androidx.ui.material.icons.Icons
 import androidx.ui.material.icons.filled.Add
-import androidx.ui.material.icons.filled.Menu
-//import androidx.ui.material.surface.Surface
 import androidx.ui.unit.dp
 
-@Model
+@Immutable
 data class DrawModel(
     var scaleX: Float = 1f,
     var scaleY: Float = 1f,
@@ -99,10 +95,10 @@ private fun LabeledSlider(
     range: ClosedFloatingPointRange<Float>,
     onChanged: (Float) -> Unit
 ) {
-    val position = SliderPosition(initial = 0f, valueRange = range)
-    position.value = value
+   // val position = SliderPosition(initial = 0f, valueRange = range)
+    //position = value
     Text(label)
-    Slider(position = position, onValueChange = onChanged)
+    //Slider(position = position, onValueChange = onChanged)
 }
 
 @Composable
@@ -112,18 +108,17 @@ private fun ColumnScope.Display(model: DrawModel) {
     }
 
     Box(
-        modifier = Modifier.clipToBounds() + Modifier.gravity(ColumnAlign.Center),
+        modifier = Modifier.clipToBounds() + Modifier.gravity(Alignment.CenterHorizontally),
         padding = 24.dp
     ) {
-        Center {
+
             Surface(
-                modifier = Modifier.aspectRatio(1f) + drawLayer(
+                modifier = Modifier.aspectRatio(1f) + Modifier.drawLayer(
                     scaleX = animate(model.scaleX, animBuilder = anim),
                     scaleY = animate(model.scaleY, animBuilder = anim),
                     rotationX = animate(model.rotationX, animBuilder = anim),
                     rotationY = animate(model.rotationY, animBuilder = anim),
                     rotationZ = animate(model.rotationZ, animBuilder = anim),
-                    elevation = animate(model.elevation, animBuilder = anim),
                     // Animating the alpha just look janky.
                     alpha = model.alpha
                 ),
@@ -147,7 +142,7 @@ private fun ColumnScope.Display(model: DrawModel) {
                         }
                     })
                 }
-            }
+
         }
     }
 }

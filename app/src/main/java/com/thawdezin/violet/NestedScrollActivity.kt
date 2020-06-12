@@ -4,15 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.ui.core.Alignment
+import androidx.ui.core.Alignment.Companion.Center
+import androidx.ui.core.Modifier
 import androidx.ui.foundation.Text
 import androidx.ui.core.setContent
+import androidx.ui.foundation.Box
 import androidx.ui.foundation.HorizontalScroller
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
-import androidx.ui.layout.Center
-import androidx.ui.layout.Column
-import androidx.ui.layout.Container
-import androidx.ui.layout.Row
+import androidx.ui.layout.*
 import androidx.ui.material.Divider
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Scaffold
@@ -34,9 +34,7 @@ class NestedScrollActivity : AppCompatActivity() {
 fun nestedScrollContent() {
     MaterialTheme {
         Scaffold {
-            Container(expanded = true) {
                 oneToVertical()
-            }
         }
     }
 }
@@ -44,17 +42,17 @@ fun nestedScrollContent() {
 @Composable
 fun oneToVertical() {
     Card(color = Color.Yellow) {
-        Container(alignment = Alignment.Center, expanded = true){
+        Box(gravity = Alignment.Center){
             VerticalScroller {
                 Column {
                     for (i in 1..100) {
                         if (i == 20) {
-                            Container(height = 300.dp) { // The height of Green
+                            Box(modifier = Modifier.height(300.dp)) { // The height of Green
                                 aToZhorizontal()
                             }
                             //Text("HERE")
                         } else {
-                            Container(height = 100.dp){ // height of Numbers
+                            Box(modifier = Modifier.height(100.dp)){ // height of Numbers
                                 Text("$i")
                             }
                         }
@@ -69,20 +67,20 @@ fun oneToVertical() {
 @Composable
 fun aToZhorizontal() {
     Card(color = Color.Green){
-        Container(alignment = Alignment.Center, expanded = true) {
+        Box(gravity = Alignment.Center) {
             HorizontalScroller(isScrollable = true) {
                 Row {
                     for (i in 'a'..'z') {
                         if (i == 'd') {
-                            Container(width = 300.dp){
+                            Box(modifier = Modifier.width(300.dp)){
                                 aToZvertical()
                             }
                         } else {
-                            Center(){
-                                Container(width = 100.dp){
+
+                                Box(modifier = Modifier.width(100.dp)){
                                     Text(" $i ")
                                 }
-                            }
+
                         }
                     }
                 }
@@ -94,20 +92,18 @@ fun aToZhorizontal() {
 @Composable
 fun aToZvertical() {
     Card(color = Color.Red) {
-        Container(alignment = Alignment.Center, expanded = true){
+        Box(gravity = Alignment.Center){
             VerticalScroller {
                 Column {
                     for (i in 'a'..'z') {
                         if (i=='d') {
-                            Container(height = 200.dp) {
+                            Box(modifier = Modifier.height(200.dp)) {
                                 OneToHorizontal()
                             }
                             //Text("HERE")
                         } else {
-                            Center(){
-                                Container(height = 100.dp){
-                                    Text("$i")
-                                }
+                            Box(modifier = Modifier.height(100.dp), gravity = Alignment.Center) {
+                                Text("$i")
                             }
                         }
                     }
@@ -121,20 +117,20 @@ fun aToZvertical() {
 @Composable
 fun OneToHorizontal(){
     Card(color = Color.Blue){
-        Container(alignment = Alignment.Center, expanded = true) {
+        Box(gravity = Alignment.Center) {
             HorizontalScroller(isScrollable = true) {
                 Row {
                     for (i in 1..100) {
                         if (i == 10) {
-                            Container(width = 150.dp){
+                            Box(modifier = Modifier.width(150.dp)){
                                 OneVertical()
                             }
                         } else {
-                            Center(){
-                                Container(width = 100.dp){
+
+                                Box(modifier = Modifier.width(100.dp), gravity = Alignment.Center){
                                     Text(" $i ")
                                 }
-                            }
+
                         }
                     }
                 }
@@ -146,21 +142,20 @@ fun OneToHorizontal(){
 @Composable
 fun OneVertical(){
     Card(color = Color.Magenta) {
-        Container(alignment = Alignment.Center, expanded = true){
+        Box(gravity = Alignment.Center){
             VerticalScroller {
                 Column {
                     for (i in 'a'..'z') {
                         if (i=='d') {
-                            Container(height = 150.dp) {
+                            Box(modifier = Modifier.height(150.dp)) {
                                 TwoHorizontal()
                             }
                             //Text("HERE")
                         } else {
-                            Center(){
-                                Container(height = 100.dp){
+                                Box(modifier = Modifier.height(100.dp)){
                                     Text("$i")
                                 }
-                            }
+
                         }
                     }
                 }
@@ -172,7 +167,7 @@ fun OneVertical(){
 @Composable
 fun TwoHorizontal(){
     Card(color = Color.White){
-        Container(alignment = Alignment.Center, expanded = true) {
+        Box(gravity = Alignment.Center) {
             HorizontalScroller(isScrollable = true) {
                 Row {
                     for (i in 1..100) {

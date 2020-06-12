@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.compose.Composable
-import androidx.compose.Model
+import androidx.compose.Immutable
 import androidx.ui.core.setContent
 import androidx.ui.foundation.Text
 import androidx.ui.graphics.Color
@@ -31,7 +31,7 @@ class April25TutorialActivity : AppCompatActivity() {
         Column{
             TopAppBar(title = {
                 Text("This is Toolbar")
-            },color = Color.Magenta)
+            },backgroundColor = Color.Magenta)
 
             Text(text = "This is Text")
             Button(onClick = {click.count++},contentColor = Color.Red){
@@ -45,6 +45,6 @@ class April25TutorialActivity : AppCompatActivity() {
         }
     }
 
-    @Model
+    @Immutable
     class ClickCount(var count: Int = 0)
 }

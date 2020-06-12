@@ -1,18 +1,16 @@
 package com.thawdezin.violet
 
-import android.graphics.Paint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
-import androidx.ui.core.*
+import androidx.ui.core.Alignment
+import androidx.ui.core.Modifier
+import androidx.ui.core.setContent
+import androidx.ui.foundation.Box
 import androidx.ui.foundation.Text
-
-import androidx.ui.foundation.shape.corner.RoundedCornerShape
-import androidx.ui.graphics.Color
 import androidx.ui.layout.*
 import androidx.ui.material.Button
 import androidx.ui.material.Scaffold
-import androidx.ui.text.style.TextOverflow
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 
@@ -26,7 +24,6 @@ class StackLayoutActivity : AppCompatActivity() {
 }
 
 
-
 @Preview
 @Composable
 fun MainContainer() {
@@ -35,42 +32,41 @@ fun MainContainer() {
         Stack {
 
             //Align(Alignment.TopCenter) {
-                Column(arrangement = Arrangement.Center) {
-                    Container(
-                        //background(Color.Green),
-                        alignment = Alignment.TopCenter,
-                        //height = 350.dp,
-                        width = 450.dp,
-                        expanded = true
-                    ) {
-                        Text("Up")
-                    }
-
+            Column(verticalArrangement = Arrangement.Center) {
+                Box(
+                    //background(Color.Green),
+                    gravity = Alignment.TopCenter,
+                    //height = 350.dp,
+                    modifier = Modifier.width(450.dp).width(350.dp)
+                ) {
+                    Text("Up")
                 }
+
+            }
             //}
 
             //Align(alignment = Alignment.BottomCenter) {
-                Column(//background(Color.Yellow),
-                    arrangement = Arrangement.Center) {
-                    Container(
-                        alignment = Alignment.Center,
-                        height = 350.dp,
-                        width = 450.dp
-                        //expanded = true
-                    ) {
-                        Text("Down")
-                    }
+            Column(//background(Color.Yellow),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Box(
+                    gravity = Alignment.Center,
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                    //expanded = true
+                ) {
+                    Text("Down")
                 }
+            }
             //}
 
             //Align(Alignment.Center) {
-                Column(arrangement = Arrangement.Center) {//background(Color.White),
-                    Container(alignment = Alignment.Center, height = 250.dp, width = 250.dp) {
-                        //TextOverflow.Clip(shape = RoundedCornerShape(8.dp)) {
-                            LoginContainer()
-                        //}
-                    }
+            Column(verticalArrangement = Arrangement.Center) {//background(Color.White),
+                Box(gravity = Alignment.Center, modifier = Modifier.height(200.dp).width(200.dp)) {
+                    //TextOverflow.Clip(shape = RoundedCornerShape(8.dp)) {
+                    LoginContainer()
+                    //}
                 }
+            }
             //}
         }
     }
@@ -83,7 +79,7 @@ fun LoginContainer() {
         //DrawImage(image = img)
         Text("Username")
         Text("Password")
-        Button(onClick = {}){
+        Button(onClick = {}) {
             Text("Login")
         }
     }
