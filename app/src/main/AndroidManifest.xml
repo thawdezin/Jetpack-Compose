@@ -10,11 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".April25TutorialActivity"/>
+        <activity android:name=".ConstraintLayout"></activity>
+        <activity android:name=".April25TutorialActivity" />
         <activity android:name=".FullFeatureTableActivity" />
         <activity android:name="com.thawdezin.TestLayoutActivity" />
         <activity android:name=".TestingActivity" />
-        <activity android:name=".LayoutTestingActivity" />
+        <activity android:name=".AdapterListVsScrollerActivity" />
         <activity android:name=".ScrollerOnDataChange" />
         <activity android:name=".MultiViewWithoutFragment" />
         <activity android:name=".SplashScreenActivity" />

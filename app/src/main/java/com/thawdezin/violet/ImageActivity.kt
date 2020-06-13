@@ -2,16 +2,27 @@ package com.thawdezin.violet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.Composable
+import androidx.compose.state
+import androidx.ui.core.Alignment
 import androidx.ui.core.Modifier
+import androidx.ui.core.drawShadow
 import androidx.ui.core.setContent
-import androidx.ui.foundation.Box
-import androidx.ui.layout.Column
-import androidx.ui.layout.height
-import androidx.ui.layout.width
+import androidx.ui.foundation.*
+import androidx.ui.foundation.shape.corner.CircleShape
+import androidx.ui.foundation.shape.corner.CutCornerShape
+import androidx.ui.foundation.shape.corner.RoundedCornerShape
+import androidx.ui.graphics.Color
+import androidx.ui.graphics.ImageAsset
+import androidx.ui.graphics.Outline
+import androidx.ui.graphics.Shape
+import androidx.ui.layout.*
+import androidx.ui.material.MaterialTheme
+import androidx.ui.material.icons.Icons
+import androidx.ui.material.primarySurface
 import androidx.ui.res.imageResource
+import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-
-//import kotlinx.android.synthetic.main.activity_test_layout.*
 
 //class ImageActivity : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,19 +80,53 @@ class ImageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val img = imageResource(id = R.drawable.developer)
+            Column(modifier = Modifier.fillMaxHeight().fillMaxWidth()) {
+                Text("Click the image")
 
-            Column {
-                Box(modifier = Modifier.width(200.dp).height(200.dp)) {
-                    //DrawImage(image = img)
-
-                    //imageView.load(R.drawable.developer)
+                Box(gravity = Alignment.BottomCenter, modifier = Modifier.fillMaxWidth())
+                {
+                    MyImagePlayGround()
                 }
-                //SimpleImage(imageResource(id = R.drawable.qr), tint = Color.Green)
+
             }
-            //DrawImage(image = img)
-            //SimpleImage(image = img, tint = Color.Green)
         }
     }
+}
+
+@Preview(name = "Image Design Preview")
+@Composable
+fun MyImagePlayGround(){
+    val (shape, setShape) = state<Shape> { RoundedCornerShape(topLeft = 42.dp, bottomRight = 42.dp)}
+    val img = imageResource(id = R.drawable.developer)
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        Box(modifier = Modifier
+            .size(300.dp)
+            .padding(16.dp)
+            .drawShadow(9.dp , shape = shape)
+            .drawBorder(size = 1.dp, color = Color.Blue, shape = shape)
+            .drawBorder(size = 12.dp, color = Color.Red, shape = shape)
+            .drawBorder(size = 13.dp, color = Color.Green, shape = shape)
+            .drawBorder(size = 14.dp, color = Color.Yellow, shape = shape)
+
+            .clickable{
+                setShape(
+                    if(shape == RoundedCornerShape(topLeft = 42.dp, bottomRight = 42.dp))
+                        CutCornerShape(topLeft = 42.dp, bottomLeft = 30.dp)
+                    else
+                       RoundedCornerShape(topLeft = 42.dp, bottomRight = 42.dp)
+                )
+            }
+
+        ) {
+            //DrawImage(image = img)
+
+            //imageView.load(R.drawable.developer)
+            Image(img)
+        }
+        //SimpleImage(imageResource(id = R.drawable.qr), tint = Color.Green)
+    }
+    //DrawImage(image = img)
+    //SimpleImage(image = img, tint = Color.Green)
 }
 

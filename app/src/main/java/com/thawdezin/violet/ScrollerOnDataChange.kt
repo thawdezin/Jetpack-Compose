@@ -17,7 +17,6 @@ import androidx.ui.material.Card
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Scaffold
 
-@Immutable
 class ModelClass(var count: Int = 0)
 
 class ScrollerOnDataChange : AppCompatActivity() {
