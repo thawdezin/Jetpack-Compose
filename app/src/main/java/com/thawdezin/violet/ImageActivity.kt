@@ -2,27 +2,22 @@ package com.thawdezin.violet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.compose.state
-import androidx.ui.core.Alignment
-import androidx.ui.core.Modifier
-import androidx.ui.core.drawShadow
-import androidx.ui.core.setContent
-import androidx.ui.foundation.*
-import androidx.ui.foundation.shape.corner.CircleShape
-import androidx.ui.foundation.shape.corner.CutCornerShape
-import androidx.ui.foundation.shape.corner.RoundedCornerShape
-import androidx.ui.graphics.Color
-import androidx.ui.graphics.ImageAsset
-import androidx.ui.graphics.Outline
-import androidx.ui.graphics.Shape
-import androidx.ui.layout.*
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.icons.Icons
-import androidx.ui.material.primarySurface
-import androidx.ui.res.imageResource
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.state
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawShadow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
 
 //class ImageActivity : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,7 +78,7 @@ class ImageActivity : AppCompatActivity() {
             Column(modifier = Modifier.fillMaxHeight().fillMaxWidth()) {
                 Text("Click the image")
 
-                Box(gravity = Alignment.BottomCenter, modifier = Modifier.fillMaxWidth())
+                Box(alignment = Alignment.BottomCenter, modifier = Modifier.fillMaxWidth())
                 {
                     MyImagePlayGround()
                 }
@@ -96,7 +91,7 @@ class ImageActivity : AppCompatActivity() {
 @Preview(name = "Image Design Preview")
 @Composable
 fun MyImagePlayGround(){
-    val (shape, setShape) = state<Shape> { RoundedCornerShape(topLeft = 42.dp, bottomRight = 42.dp)}
+    val (shape, setShape) = state<Shape> { RoundedCornerShape(topLeft = 42.dp, bottomRight = 42.dp) }
     val img = imageResource(id = R.drawable.developer)
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -104,11 +99,10 @@ fun MyImagePlayGround(){
             .size(300.dp)
             .padding(16.dp)
             .drawShadow(9.dp , shape = shape)
-            .drawBorder(size = 1.dp, color = Color.Blue, shape = shape)
-            .drawBorder(size = 12.dp, color = Color.Red, shape = shape)
-            .drawBorder(size = 13.dp, color = Color.Green, shape = shape)
-            .drawBorder(size = 14.dp, color = Color.Yellow, shape = shape)
-
+            .border(1.dp, Color.Blue, shape)
+            .border(width = 12.dp, color = Color.Red, shape = shape)
+            .border(width = 13.dp, color = Color.Green, shape = shape)
+            .border(width = 14.dp, color = Color.Yellow, shape = shape)
             .clickable{
                 setShape(
                     if(shape == RoundedCornerShape(topLeft = 42.dp, bottomRight = 42.dp))

@@ -2,17 +2,16 @@ package com.thawdezin.violet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.ui.core.Alignment
-import androidx.ui.core.Modifier
-import androidx.ui.core.setContent
-import androidx.ui.foundation.Box
-import androidx.ui.foundation.Text
-import androidx.ui.layout.*
-import androidx.ui.material.Button
-import androidx.ui.material.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
+import androidx.compose.material.Scaffold
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
 
 class StackLayoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +28,13 @@ class StackLayoutActivity : AppCompatActivity() {
 fun MainContainer() {
     //MaterialTheme {
     Scaffold {
-        Stack {
+        Box {
 
             //Align(Alignment.TopCenter) {
             Column(verticalArrangement = Arrangement.Center) {
                 Box(
                     //background(Color.Green),
-                    gravity = Alignment.TopCenter,
+                    alignment = Alignment.TopCenter,
                     //height = 350.dp,
                     modifier = Modifier.width(450.dp).width(350.dp)
                 ) {
@@ -50,7 +49,7 @@ fun MainContainer() {
                 verticalArrangement = Arrangement.Center
             ) {
                 Box(
-                    gravity = Alignment.Center,
+                    alignment = Alignment.Center,
                     modifier = Modifier.width(200.dp).height(200.dp)
                     //expanded = true
                 ) {
@@ -61,7 +60,7 @@ fun MainContainer() {
 
             //Align(Alignment.Center) {
             Column(verticalArrangement = Arrangement.Center) {//background(Color.White),
-                Box(gravity = Alignment.Center, modifier = Modifier.height(200.dp).width(200.dp)) {
+                Box(alignment = Alignment.Center, modifier = Modifier.height(200.dp).width(200.dp)) {
                     //TextOverflow.Clip(shape = RoundedCornerShape(8.dp)) {
                     LoginContainer()
                     //}

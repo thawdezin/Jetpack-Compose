@@ -1,42 +1,39 @@
 package com.thawdezin.violet.ui
 
-import androidx.compose.Composable
-import androidx.ui.foundation.isSystemInDarkTheme
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.darkColorPalette
-import androidx.ui.material.lightColorPalette
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.MaterialTheme
+import androidx.compose.runtime.Composable
 
-private val DarkColorPalette = darkColorPalette(
-        primary = purple200,
-        primaryVariant = purple700,
-        secondary = teal200
-)
-
-private val LightColorPalette = lightColorPalette(
-        primary = purple500,
-        primaryVariant = purple700,
-        secondary = teal200
-
-        /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
-)
+//private val DarkColorPalette = darkColorPalette(
+//        primary = purple200,
+//        primaryVariant = purple700,
+//        secondary = teal200
+//)
+//
+//private val LightColorPalette = lightColorPalette(
+//        primary = purple500,
+//        primaryVariant = purple700,
+//        secondary = teal200
+//
+//        /* Other default colors to override
+//    background = Color.White,
+//    surface = Color.White,
+//    onPrimary = Color.White,
+//    onSecondary = Color.Black,
+//    onBackground = Color.Black,
+//    onSurface = Color.Black,
+//    */
+//)
 
 @Composable
 fun VioletTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
     val colors = if (darkTheme) {
-        DarkColorPalette
+        //DarkColorPalette
     } else {
-        LightColorPalette
+        //LightColorPalette
     }
 
     MaterialTheme(
-            colors = colors,
             typography = typography,
             shapes = shapes,
             content = content

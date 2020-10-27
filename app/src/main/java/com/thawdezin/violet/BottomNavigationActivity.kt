@@ -3,20 +3,11 @@ package com.thawdezin.violet
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.setContent
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.ui.core.Alignment
-import androidx.ui.core.setContent
-import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.Color
-import androidx.ui.foundation.Image
-import androidx.ui.graphics.imageFromResource
-import androidx.ui.layout.Column
-import androidx.ui.material.*
-import androidx.ui.res.imageResource
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
 
 class BottomNavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

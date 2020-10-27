@@ -3,18 +3,19 @@ package com.thawdezin.violet
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.compose.Immutable
-import androidx.ui.core.setContent
-import androidx.ui.foundation.AdapterList
-import androidx.ui.foundation.Text
-import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.Color
-import androidx.ui.layout.Column
-import androidx.ui.material.Button
-import androidx.ui.material.MaterialTheme
-import androidx.ui.text.TextStyle
-import androidx.ui.unit.sp
+import androidx.compose.foundation.ScrollableRow
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyColumnFor
+import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.sp
 
 /**
 Adapter List ရော Scroller ရောကို Columnနဲ့ တွဲထည့်ထားရင် ၂ခုလုံး ပေါ်မလာဘူး
@@ -45,20 +46,12 @@ class AdapterListVsScrollerActivity : AppCompatActivity() {
 
     @Composable
     fun MainView(state: CheckState) {
-        AdapterList(
-            data = (0..32).map { it }.toList()
-        ) {
-            if (it % 2 == 0) {
-                Text("$it Even", style = TextStyle(fontSize = 40.sp, color = Color.Green))
-            } else {
-                Text(text = "$it Odd", style = TextStyle(fontSize = 70.sp))
-            }
-        }
+
     }
 
-    @Composable
+    @androidx.compose.runtime.Composable
     fun ScrollView(state: CheckState) {
-        VerticalScroller(isScrollable = true) {
+        ScrollableRow() {
             Column() {
                 for (i in state.count..32) {
                     if (i % 2 == 0) {

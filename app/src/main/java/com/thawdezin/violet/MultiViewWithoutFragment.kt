@@ -2,23 +2,21 @@ package com.thawdezin.violet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.compose.Composable
-import androidx.compose.Immutable
-
-import androidx.ui.core.Modifier
-import androidx.ui.foundation.Text
-import androidx.ui.core.setContent
-import androidx.ui.foundation.Box
-
-import androidx.ui.graphics.Color
-import androidx.ui.layout.Column
-import androidx.ui.material.Button
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.Scaffold
-import androidx.ui.material.Card
-import androidx.ui.text.TextStyle
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Button
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.sp
 
 @Immutable
 class Changes(var count: Int = 0)
@@ -41,7 +39,7 @@ class MultiViewWithoutFragment : AppCompatActivity() {
 @Composable
 private fun primaryView(state: Changes) {
     Column(){
-        Card(modifier = Modifier.weight(1f), color = Color.Green){
+        Card(modifier = Modifier.weight(1f), backgroundColor = Color.Green){
             Box(modifier = Modifier.weight(1f)){
                 if(state.count %2 == 0){
                     FirstView()
@@ -51,12 +49,12 @@ private fun primaryView(state: Changes) {
                 }
             }
         }
-        Card(modifier = Modifier.weight(1f), color = Color.Yellow){
-            Box(){
+        Card(modifier = Modifier.weight(1f, true), backgroundColor = Color.Yellow){
+            //Box(){
                 Button(onClick = {state.count++}){
                     Text("Click me to see what happens")
                 }
-            }
+            //}
         }
     }
 }

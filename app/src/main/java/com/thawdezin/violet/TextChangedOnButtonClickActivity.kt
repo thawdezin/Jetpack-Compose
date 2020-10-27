@@ -2,30 +2,17 @@ package com.thawdezin.violet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import androidx.compose.Composable
-import androidx.compose.Model
-import androidx.compose.state
-//import androidx.compose.unaryPlus
-
-import androidx.ui.foundation.Text
-import androidx.ui.foundation.TextField
-import androidx.ui.core.setContent
-import androidx.ui.graphics.Color
-import androidx.ui.input.ImeAction
-import androidx.ui.input.KeyboardType
-import androidx.ui.layout.Column
-import androidx.ui.material.Button
-import androidx.ui.material.Divider
-import androidx.ui.text.TextStyle
+import androidx.compose.runtime.Composable
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Button
+import androidx.compose.ui.platform.setContent
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.sp
 
-@Model
+
 class CounterState(var count: Int = 0, var txt: String = " ")
 
-@Model
 class TextChanged(var changedText: String = " ")
 
 class TextChangedOnButtonClickActivity : AppCompatActivity() {

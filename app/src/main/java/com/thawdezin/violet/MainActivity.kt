@@ -3,20 +3,32 @@ package com.thawdezin.violet
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.ui.core.Alignment
-import androidx.ui.core.setContent
-import androidx.ui.foundation.Box
-import androidx.ui.foundation.Text
-import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.Color
-import androidx.ui.layout.Column
-import androidx.ui.material.Button
-import androidx.ui.material.Divider
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.Scaffold
+import androidx.compose.foundation.ScrollableRow
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Button
+//import androidx.compose.foundation.Box
+import androidx.compose.material.Divider
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.unit.dp
+//import androidx.ui.core.Alignment
+//import androidx.ui.core.setContent
+//import androidx.ui.foundation.Box
+//import androidx.ui.foundation.Text
+//import androidx.ui.foundation.VerticalScroller
+//import androidx.ui.graphics.Color
+//import androidx.ui.layout.Column
+//import androidx.ui.material.Button
+//import androidx.ui.material.Divider
+//import androidx.ui.material.MaterialTheme
+//import androidx.ui.material.Scaffold
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
+//import androidx.ui.unit.dp
 
 @Suppress("UNCHECKED_CAST")
 class MainActivity : AppCompatActivity() {
@@ -32,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     fun mainContent() {
         MaterialTheme {
             Scaffold {
-                VerticalScroller {
+                ScrollableRow() {
                     Column {
                         showButton(ConstraintLayout::class.javaObjectType as Class<Any>)
                         showButton(AdapterListVsScrollerActivity::class.javaObjectType as Class<Any>)
@@ -59,11 +71,10 @@ class MainActivity : AppCompatActivity() {
     @Composable
     private fun showButton(goTo: Class<Any>?) {
 
-        val readableClassName =
-            goTo!!.simpleName.split(("(?=\\p{Upper})").toRegex()).dropLastWhile { it.isEmpty() }
-                .toTypedArray().joinToString(prefix = "", postfix = "", separator = " ")
-
-        Box(gravity = Alignment.Center) {
+        //val readableClassName = goTo!!.simpleName.split(("(?=\\p{Upper})").toRegex()).dropLastWhile { it.isEmpty() }
+                //.toTypedArray().joinToString(prefix = "", postfix = "", separator = " ")
+        val readableClassName = "Temp"
+        //Box(gravity = Alignment.Center) {
             Button(
                 backgroundColor = Color.Green,
                 contentColor = Color.Black,
@@ -72,7 +83,7 @@ class MainActivity : AppCompatActivity() {
             ) {
                 Text(text = readableClassName)
             }
-        }
+        //}
         Divider(color = Color.Transparent, thickness = 3.dp)
     }
 }//MainActivity

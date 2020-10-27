@@ -1,15 +1,13 @@
 package com.thawdezin.violet.my
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.ui.core.*
-import androidx.ui.foundation.Text
-import androidx.ui.graphics.Color
-import androidx.ui.text.AnnotatedString
-import androidx.ui.text.TextLayoutResult
-import androidx.ui.text.TextStyle
-import androidx.ui.text.style.TextOverflow
-import androidx.ui.unit.sp
+import androidx.compose.foundation.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextOverflow
 
 /**
  * Constants
@@ -41,13 +39,13 @@ private val DefaultOverflow: TextOverflow = TextOverflow.Clip
      */
 @Composable
 fun MyText(
-    text: String,
-    modifier: Modifier = Modifier.None,
-    style: TextStyle? = null,
-    softWrap: Boolean = DefaultSoftWrap,
-    overflow: TextOverflow = DefaultOverflow,
-    maxLines: Int = DefaultMaxLines,
-    onTextLayout: (TextLayoutResult) -> Unit = {}
+        text: String,
+        modifier: Modifier = Modifier.None,
+        style: TextStyle? = null,
+        softWrap: Boolean = DefaultSoftWrap,
+        overflow: TextOverflow = DefaultOverflow,
+        maxLines: Int = DefaultMaxLines,
+        onTextLayout: (TextLayoutResult) -> Unit = {}
 ) {
         style?.let {
             Text(

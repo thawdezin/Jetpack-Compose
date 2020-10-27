@@ -5,11 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.Composable
-import androidx.ui.foundation.Text
-import androidx.ui.core.setContent
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.TopAppBar
+import androidx.compose.material.MaterialTheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.setContent
 import com.thawdezin.violet.R
 
 class ThawFragment : Fragment() {

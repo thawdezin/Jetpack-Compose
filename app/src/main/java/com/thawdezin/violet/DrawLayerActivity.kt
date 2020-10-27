@@ -1,24 +1,11 @@
 package com.thawdezin.violet
 
-import androidx.animation.PhysicsBuilder
-import androidx.animation.Spring.DampingRatioHighBouncy
-import androidx.animation.Spring.StiffnessLow
-import androidx.compose.Composable
-import androidx.compose.Immutable
-import androidx.compose.remember
-import androidx.ui.animation.animate
-import androidx.ui.core.Alignment
-import androidx.ui.core.Modifier
-import androidx.ui.core.clipToBounds
-import androidx.ui.core.drawLayer
-import androidx.ui.foundation.*
-import androidx.ui.foundation.shape.corner.RoundedCornerShape
-import androidx.ui.graphics.Color
-import androidx.ui.layout.*
-import androidx.ui.material.*
-import androidx.ui.material.icons.Icons
-import androidx.ui.material.icons.filled.Add
-import androidx.ui.unit.dp
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 
 @Immutable
 data class DrawModel(
@@ -103,46 +90,57 @@ private fun LabeledSlider(
 
 @Composable
 private fun ColumnScope.Display(model: DrawModel) {
-    val anim = remember {
-        PhysicsBuilder<Float>(dampingRatio = DampingRatioHighBouncy, stiffness = StiffnessLow)
-    }
-
-    Box(
-        modifier = Modifier.clipToBounds() + Modifier.gravity(Alignment.CenterHorizontally),
-        padding = 24.dp
-    ) {
-
-            Surface(
-                modifier = Modifier.aspectRatio(1f) + Modifier.drawLayer(
-                    scaleX = animate(model.scaleX, animBuilder = anim),
-                    scaleY = animate(model.scaleY, animBuilder = anim),
-                    rotationX = animate(model.rotationX, animBuilder = anim),
-                    rotationY = animate(model.rotationY, animBuilder = anim),
-                    rotationZ = animate(model.rotationZ, animBuilder = anim),
-                    // Animating the alpha just look janky.
-                    alpha = model.alpha
-                ),
-                shape = RoundedCornerShape(10.dp),
-                border = Border(1.dp, Color.Red),
-                color = Color.LightGray
-            ) {
-                Scaffold(
-                    topAppBar = {
-                        TopAppBar(
-                            title = { Text("Demo") },
-                            navigationIcon = { IconButton(onClick = {}) { Icon(Icons.Default.Add) } }
-                        )
-                    },
-                    floatingActionButton = { FloatingActionButton(onClick = {}) { Icon(Icons.Default.Add) } }
-                ) {
-                    Box(Modifier.fillMaxSize(), gravity = ContentGravity.Center, children = {
-                        Column {
-                            Text("Some text")
-                            CircularProgressIndicator()
-                        }
-                    })
-                }
-
-        }
-    }
+//    val anim = remember {
+//        PhysicsBuilder<Float>(dampingRatio = DampingRatioHighBouncy, stiffness = StiffnessLow)
+//    }
+//
+//    Box(
+//        modifier = Modifier.clipToBounds() + Modifier.align(Alignment.CenterHorizontally),
+//        //padding = 24.dp
+//    ) {
+//
+//            Surface(
+//                modifier = Modifier.aspectRatio(1f) + Modifier.drawLayer(
+//                    scaleX = animate(model.scaleX, animBuilder = anim),
+//                    scaleY = animate(model.scaleY, animBuilder = anim),
+//                    rotationX = animate(model.rotationX, animBuilder = anim),
+//                    rotationY = animate(model.rotationY, animBuilder = anim),
+//                    rotationZ = animate(model.rotationZ, animBuilder = anim),
+//                    // Animating the alpha just look janky.
+//                    alpha = model.alpha
+//                ),
+//                shape = RoundedCornerShape(10.dp),
+//                border = BorderStroke(1.dp, Color.Red),
+//                color = Color.LightGray
+//            ) {
+//                Scaffold(
+//                    topAppBar = {
+//                        TopAppBar(
+//                            title = { Text("Demo") },
+//                            navigationIcon = { IconButton(onClick = {}) { Icon(Icons.Default.Add) } }
+//                        )
+//                    },
+//                    floatingActionButton = { FloatingActionButton(onClick = {}) { Icon(Icons.Default.Add) } }
+//                ) {
+//                    val padding = border?.width ?: 0.dp
+//                    Box(
+//                        Modifier.fillMaxSize().background(Color.Transparent)
+//                            .border(null, RectangleShape).padding(
+//                            start = if (Dp.Unspecified != Dp.Unspecified) Dp.Unspecified else padding,
+//                            top = if (Dp.Unspecified != Dp.Unspecified) Dp.Unspecified else padding,
+//                            end = if (Dp.Unspecified != Dp.Unspecified) Dp.Unspecified else padding,
+//                            bottom = if (Dp.Unspecified != Dp.Unspecified) Dp.Unspecified else padding
+//                        ),
+//                        alignment = Alignment.Center,
+//                        children = {
+//                            Column {
+//                                Text("Some text")
+//                                CircularProgressIndicator()
+//                            }
+//                        }
+//                    )
+//                }
+//
+//        }
+//    }
 }

@@ -2,23 +2,20 @@ package com.thawdezin.violet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.Composable
-import androidx.ui.core.Alignment
-import androidx.ui.core.Alignment.Companion.Center
-import androidx.ui.core.Modifier
-import androidx.ui.foundation.Text
-import androidx.ui.core.setContent
-import androidx.ui.foundation.Box
-import androidx.ui.foundation.HorizontalScroller
-import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.Color
-import androidx.ui.layout.*
-import androidx.ui.material.Divider
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.Scaffold
-import androidx.ui.material.Card
+import androidx.compose.foundation.ScrollableColumn
+import androidx.compose.foundation.ScrollableRow
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
 
 class NestedScrollActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,9 +38,9 @@ fun nestedScrollContent() {
 
 @Composable
 fun oneToVertical() {
-    Card(color = Color.Yellow) {
-        Box(gravity = Alignment.Center){
-            VerticalScroller {
+    Card(backgroundColor = Color.Yellow) {
+        //Box(gravity = Alignment.Center){
+            ScrollableRow() {
                 Column {
                     for (i in 1..100) {
                         if (i == 20) {
@@ -58,7 +55,7 @@ fun oneToVertical() {
                         }
                     }
                 }
-            }
+            //}
         }
     }
 }
@@ -66,9 +63,9 @@ fun oneToVertical() {
 @Preview("AtoZ_Horizontal")
 @Composable
 fun aToZhorizontal() {
-    Card(color = Color.Green){
-        Box(gravity = Alignment.Center) {
-            HorizontalScroller(isScrollable = true) {
+    Card(backgroundColor = Color.Green){
+        //Box(gravity = Alignment.Center) {
+            ScrollableColumn(isScrollEnabled = true) {
                 Row {
                     for (i in 'a'..'z') {
                         if (i == 'd') {
@@ -84,16 +81,16 @@ fun aToZhorizontal() {
                         }
                     }
                 }
-            }
+            //}
         }
     }
 }
 
 @Composable
 fun aToZvertical() {
-    Card(color = Color.Red) {
-        Box(gravity = Alignment.Center){
-            VerticalScroller {
+    Card(backgroundColor = Color.Red) {
+        //Box(gravity = Alignment.Center){
+            ScrollableRow() {
                 Column {
                     for (i in 'a'..'z') {
                         if (i=='d') {
@@ -102,13 +99,13 @@ fun aToZvertical() {
                             }
                             //Text("HERE")
                         } else {
-                            Box(modifier = Modifier.height(100.dp), gravity = Alignment.Center) {
+                            Box(modifier = Modifier.height(100.dp), alignment = Alignment.Center) {
                                 Text("$i")
                             }
                         }
                     }
                 }
-            }
+            //}
         }
     }
 }
@@ -116,9 +113,9 @@ fun aToZvertical() {
 
 @Composable
 fun OneToHorizontal(){
-    Card(color = Color.Blue){
-        Box(gravity = Alignment.Center) {
-            HorizontalScroller(isScrollable = true) {
+    Card(backgroundColor = Color.Blue){
+        //Box(gravity = Alignment.Center) {
+            ScrollableColumn(isScrollEnabled = true) {
                 Row {
                     for (i in 1..100) {
                         if (i == 10) {
@@ -127,23 +124,23 @@ fun OneToHorizontal(){
                             }
                         } else {
 
-                                Box(modifier = Modifier.width(100.dp), gravity = Alignment.Center){
+                                Box(modifier = Modifier.width(100.dp), alignment = Alignment.Center){
                                     Text(" $i ")
                                 }
 
                         }
                     }
                 }
-            }
+           // }
         }
     }
 }
 
 @Composable
 fun OneVertical(){
-    Card(color = Color.Magenta) {
-        Box(gravity = Alignment.Center){
-            VerticalScroller {
+    Card(backgroundColor = Color.Magenta) {
+        //Box(gravity = Alignment.Center){
+            ScrollableRow() {
                 Column {
                     for (i in 'a'..'z') {
                         if (i=='d') {
@@ -159,23 +156,23 @@ fun OneVertical(){
                         }
                     }
                 }
-            }
+            //}
         }
     }
 }
 
 @Composable
 fun TwoHorizontal(){
-    Card(color = Color.White){
-        Box(gravity = Alignment.Center) {
-            HorizontalScroller(isScrollable = true) {
+    Card(backgroundColor = Color.White){
+        //Box(gravity = Alignment.Center) {
+            ScrollableColumn(isScrollEnabled = true) {
                 Row {
                     for (i in 1..100) {
                         Text(" $i ")
                     }
                 }
             }
-        }
+        //}
     }
 }
 

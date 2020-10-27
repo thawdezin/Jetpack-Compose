@@ -7,7 +7,7 @@ package com.thawdezin.violet.fragments
 //import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 //import android.widget.FrameLayout
 //import android.widget.Toast
-//import androidx.compose.Composable
+//import androidx.compose.runtime.Composable
 //import androidx.compose.Model
 //import androidx.fragment.app.Fragment
 //import androidx.lifecycle.MutableLiveData

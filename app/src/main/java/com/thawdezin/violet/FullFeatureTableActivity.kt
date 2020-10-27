@@ -2,10 +2,10 @@ package com.thawdezin.violet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.compose.Composable
-import androidx.compose.Immutable
-import androidx.ui.core.setContent
-import androidx.ui.layout.Column
+import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.runtime.Immutable
+import androidx.compose.ui.platform.setContent
 //import androidx.ui.material.DataTable
 //import androidx.ui.material.DefaultDataTableSorting
 
@@ -29,8 +29,8 @@ fun Table(){
     val b = MenuItem( 2)
     val c = MenuItem( 100)
     val d = MenuItem(500)
-    val items = mutableListOf<MenuItem>(a,b,c,d)
-    SortableTable(menuItems = items)
+    //val items = {mutableListOf<MenuItem>(a,b,c,d)}
+    //SortableTable(menuItems = items)
 }
 
 @Composable

@@ -3,9 +3,9 @@ package com.thawdezin.violet
 import android.R
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.platform.setContent
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import androidx.ui.core.setContent
 
 
 class FragmentContainerActivity : AppCompatActivity() {
