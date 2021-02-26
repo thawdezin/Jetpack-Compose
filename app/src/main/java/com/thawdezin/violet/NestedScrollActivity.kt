@@ -2,10 +2,11 @@ package com.thawdezin.violet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.ScrollableColumn
-import androidx.compose.foundation.ScrollableRow
-import androidx.compose.foundation.Text
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
+import androidx.compose.material.Text
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -13,16 +14,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.platform.ComposeView
+
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 
 class NestedScrollActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            nestedScrollContent()
-        }
+        setContentView(ComposeView(applicationContext).apply {
+            setContent {
+                nestedScrollContent()
+            }
+        })
     }
 }
 
@@ -40,7 +44,7 @@ fun nestedScrollContent() {
 fun oneToVertical() {
     Card(backgroundColor = Color.Yellow) {
         //Box(gravity = Alignment.Center){
-            ScrollableRow() {
+            Row(Modifier.scrollable(rememberScrollState(), Orientation.Vertical)) {
                 Column {
                     for (i in 1..100) {
                         if (i == 20) {
@@ -65,7 +69,7 @@ fun oneToVertical() {
 fun aToZhorizontal() {
     Card(backgroundColor = Color.Green){
         //Box(gravity = Alignment.Center) {
-            ScrollableColumn(isScrollEnabled = true) {
+            Column(Modifier.scrollable(rememberScrollState(),Orientation.Vertical)) {
                 Row {
                     for (i in 'a'..'z') {
                         if (i == 'd') {
@@ -90,7 +94,7 @@ fun aToZhorizontal() {
 fun aToZvertical() {
     Card(backgroundColor = Color.Red) {
         //Box(gravity = Alignment.Center){
-            ScrollableRow() {
+            Row(Modifier.scrollable(rememberScrollState(),Orientation.Vertical)) {
                 Column {
                     for (i in 'a'..'z') {
                         if (i=='d') {
@@ -99,7 +103,7 @@ fun aToZvertical() {
                             }
                             //Text("HERE")
                         } else {
-                            Box(modifier = Modifier.height(100.dp), alignment = Alignment.Center) {
+                            Box(modifier = Modifier.height(100.dp), contentAlignment = Alignment.Center) {
                                 Text("$i")
                             }
                         }
@@ -115,7 +119,7 @@ fun aToZvertical() {
 fun OneToHorizontal(){
     Card(backgroundColor = Color.Blue){
         //Box(gravity = Alignment.Center) {
-            ScrollableColumn(isScrollEnabled = true) {
+            Column(Modifier.scrollable(rememberScrollState(),Orientation.Vertical)) {
                 Row {
                     for (i in 1..100) {
                         if (i == 10) {
@@ -124,7 +128,7 @@ fun OneToHorizontal(){
                             }
                         } else {
 
-                                Box(modifier = Modifier.width(100.dp), alignment = Alignment.Center){
+                                Box(modifier = Modifier.width(100.dp), contentAlignment = Alignment.Center){
                                     Text(" $i ")
                                 }
 
@@ -140,7 +144,7 @@ fun OneToHorizontal(){
 fun OneVertical(){
     Card(backgroundColor = Color.Magenta) {
         //Box(gravity = Alignment.Center){
-            ScrollableRow() {
+            Row(Modifier.scrollable(rememberScrollState(),Orientation.Vertical)) {
                 Column {
                     for (i in 'a'..'z') {
                         if (i=='d') {
@@ -165,7 +169,7 @@ fun OneVertical(){
 fun TwoHorizontal(){
     Card(backgroundColor = Color.White){
         //Box(gravity = Alignment.Center) {
-            ScrollableColumn(isScrollEnabled = true) {
+            Column(Modifier.scrollable(rememberScrollState(),Orientation.Vertical)) {
                 Row {
                     for (i in 1..100) {
                         Text(" $i ")

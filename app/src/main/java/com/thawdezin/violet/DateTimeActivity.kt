@@ -5,10 +5,11 @@ import android.app.TimePickerDialog
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Text
+import androidx.compose.material.Text
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
-import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.platform.ComposeView
+
 //import androidx.ui.core.Text
 //import androidx.ui.material.OutlinedButtonStyle
 import java.util.*
@@ -28,11 +29,13 @@ class DateTimeActivity : AppCompatActivity() {
         val datePickerDialog = DatePickerDialog(
             this, DatePickerDialog.OnDateSetListener
             { datePicker: DatePicker, day: Int, month: Int, year: Int ->
-                setContent {
-                    Column {
-                        Text("$day, $month, $year")
+                setContentView(ComposeView(applicationContext).apply{
+                    setContent {
+                        Column() {
+                            Text("$day, $month, $year")
+                        }
                     }
-                }
+                })
             }, year, month, day
         )
 
@@ -40,31 +43,36 @@ class DateTimeActivity : AppCompatActivity() {
         val timePickerDialog = TimePickerDialog(
             this,
             TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                setContent {
-                    Column {
-                        Text("$hourOfDay:$minute")
+                setContentView(ComposeView(applicationContext).apply {
+                    setContent {
+                        Column {
+                            Text("$hourOfDay:$minute")
+                        }
                     }
-                }
+                })
             }, mHour, mMinute, false
         )
 
 
-        setContent {
-            Column {
-                Button(
-                    onClick = {
-                        timePickerDialog.show()
-                    }){
-                    Text("Time")
-                }
-                Button(
-                    onClick = {
-                        timePickerDialog.show()
-                    }){
-                    Text("Time")
+        setContentView(ComposeView(applicationContext).apply{
+            setContent {
+                Column {
+                    Button(
+                        onClick = {
+                            timePickerDialog.show()
+                        }){
+                        Text("Time")
+                    }
+                    Button(
+                        onClick = {
+                            timePickerDialog.show()
+                        }){
+                        Text("Time")
+                    }
                 }
             }
-        }
+
+        })
     }
 }
 

@@ -3,40 +3,30 @@ package com.thawdezin.violet
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.ScrollableRow
-import androidx.compose.foundation.Text
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Button
-//import androidx.compose.foundation.Box
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-//import androidx.ui.core.Alignment
-//import androidx.ui.core.setContent
-//import androidx.ui.foundation.Box
-//import androidx.ui.foundation.Text
-//import androidx.ui.foundation.VerticalScroller
-//import androidx.ui.graphics.Color
-//import androidx.ui.layout.Column
-//import androidx.ui.material.Button
-//import androidx.ui.material.Divider
-//import androidx.ui.material.MaterialTheme
-//import androidx.ui.material.Scaffold
-import androidx.ui.tooling.preview.Preview
-//import androidx.ui.unit.dp
 
 @Suppress("UNCHECKED_CAST")
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            mainContent()
+        val contentView = ComposeView(context = applicationContext).apply {
+            setContent {
+                mainContent()
+            }
+            // // since no window is bound
         }
+        setContentView(contentView)
     }
 
     @Preview
@@ -44,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     fun mainContent() {
         MaterialTheme {
             Scaffold {
-                ScrollableRow() {
+                Row(Modifier.scrollable(rememberScrollState(), Orientation.Vertical)) {
                     Column {
                         showButton(ConstraintLayout::class.javaObjectType as Class<Any>)
                         showButton(AdapterListVsScrollerActivity::class.javaObjectType as Class<Any>)
@@ -73,12 +63,9 @@ class MainActivity : AppCompatActivity() {
 
         //val readableClassName = goTo!!.simpleName.split(("(?=\\p{Upper})").toRegex()).dropLastWhile { it.isEmpty() }
                 //.toTypedArray().joinToString(prefix = "", postfix = "", separator = " ")
-        val readableClassName = "Temp"
+        val readableClassName = goTo?.simpleName ?: "NULL"
         //Box(gravity = Alignment.Center) {
             Button(
-                backgroundColor = Color.Green,
-                contentColor = Color.Black,
-                elevation = 12.dp,
                 onClick = { startActivity(Intent(applicationContext, goTo)) }
             ) {
                 Text(text = readableClassName)

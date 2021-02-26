@@ -5,18 +5,21 @@ import android.os.Bundle
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Immutable
-import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.platform.ComposeView
+
 //import androidx.ui.material.DataTable
 //import androidx.ui.material.DefaultDataTableSorting
 
 class FullFeatureTableActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent{
-            Column(){
-                Table()
+        setContentView(ComposeView(applicationContext).apply {
+            setContent {
+                Column() {
+                    Table()
+                }
             }
-        }
+        })
     }
 }
 

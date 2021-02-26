@@ -1,7 +1,6 @@
 package com.thawdezin.violet.my
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Text
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
@@ -40,7 +39,7 @@ private val DefaultOverflow: TextOverflow = TextOverflow.Clip
 @Composable
 fun MyText(
         text: String,
-        modifier: Modifier = Modifier.None,
+        modifier: Modifier = Modifier,
         style: TextStyle? = null,
         softWrap: Boolean = DefaultSoftWrap,
         overflow: TextOverflow = DefaultOverflow,

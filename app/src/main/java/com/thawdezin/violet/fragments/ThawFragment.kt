@@ -1,13 +1,12 @@
 package com.thawdezin.violet.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.setContent
+import androidx.fragment.app.Fragment
 import com.thawdezin.violet.R
 
 class ThawFragment : Fragment() {
@@ -15,13 +14,15 @@ class ThawFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         val fragmentView = inflater.inflate(R.layout.fragment_thaw, container, false)
 
-        (fragmentView as ViewGroup).setContent {
-            Hello("Jetpack Compose")
-        }
+//        (fragmentView as ViewGroup).setContent(Recomposer.current()) {
+//            Hello("Jetpack Compose")
+//        }
+//
+
         return fragmentView
     }
 

@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.compose.runtime.Composable
-import androidx.compose.foundation.Text
+import androidx.compose.material.Text
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
-import androidx.compose.ui.platform.setContent
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.ComposeView
+
+import androidx.compose.ui.tooling.preview.Preview
 
 
 class CounterState(var count: Int = 0, var txt: String = " ")
@@ -18,10 +19,11 @@ class TextChanged(var changedText: String = " ")
 class TextChangedOnButtonClickActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContent {
-           loadUi()
-        }
+        setContentView(ComposeView(applicationContext).apply {
+            setContent {
+                loadUi()
+            }
+        })
     }
 
 
